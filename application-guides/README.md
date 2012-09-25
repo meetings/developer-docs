@@ -36,18 +36,18 @@ The "keys" will contain a comma separated list of HTTP parameters. You need to t
 
 Here is a code example of how to do this in Perl:
 
-    my $expected\_sig = $cgi->param("signature");
+    my $expected_sig = $cgi->param("signature");
     my @params = split ",", $cgi->param("keys");
-    my $joined\_values = join "", map { $cgi->param( $\_ ) } @values;
-    my $sig = Digest::SHA::sha256\_base64( $joined\_values . $app\_secret );
-    return ( $expected\_sig eq $sig ) ? 1 : 0;
+    my $joined_values = join "", map { $cgi->param( $_ ) } @values;
+    my $sig = Digest::SHA::sha256_base64( $joined_values . $app_secret );
+    return ( $expected_sig eq $sig ) ? 1 : 0;
 
 For added security we also provide an epoch timestamp of the signature generation time as the parameter "ts" which is also one of the validated keys. You can safely ignore requests which are not within a minute of the current time if your machine time is in sync.
 
 Here is a code example of how to do this in Perl:
 
     my $diff = time - $cgi->param("ts");
-    return ( $diff \* $diff < 3600 ) ? 1 : 0;
+    return ( $diff * $diff < 3600 ) ? 1 : 0;
 
 If the received requests pass both of these tests, you can safely assume that the requesting person is allowed to see the content corresponding to the provided ID. Once your application is up and running securely, 
 
@@ -60,9 +60,9 @@ The minimum viable material application creates a lot of materials with the same
 
 To achieve this you need to alter the URL where you forward the user after the material has been created. The URL you received from the "create\_completed\_url" parameter already contains at least one URL parameter (the "instance\_id") so it is safe to add the needed "instance\_name" parameter by appending it after an ampersand:
 
-    my $original\_url = $cgi->param( "create\_completed\_url" );
-    my $custom\_name = "Quarterly proceedings";
-    return $original\_url . "&instance\_name=" . URI::Encode::uri\_encode( $custom\_name );
+    my $original_url = $cgi->param( "create_completed_url" );
+    my $custom_name = "Quarterly proceedings";
+    return $original_url . "&instance_name=" . URI::Encode::uri_encode( $custom_name );
 
 ### Control the material iframe
 
