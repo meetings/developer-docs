@@ -13,17 +13,21 @@ Both of these endpoints are expected to return HTML which will be rendered insid
 
 ### Create endpoint
 
-Your create endpoint will receive a POST request with a parameter called "instance\_id". This POST tells you that an user has created a new material with the type of your application and in the future it will be referenced with the given ID. You need to hold on to this ID and somehow associate it with a material instance from your own application.
+Your create endpoint will receive a POST request with a parameter called "instance\_id". This POST tells you that a user has created a new material with the type of your application and in the future it will be referenced with the given ID. The next thing for you is to somehow associate this ID with a material instance from your own application.
 
-The most basic way to do this is to log the user in, offer the user a list of recent objects in your system and allow the user to pick one. Make sure with your copy that the user undrstands that a link to the object will be shared with others in the meeting. Once the object is confirmed, store an association between the ID and your object in your own database.
+The most basic way to do this is to log the user in, offer the user a list of recent objects in your system and allow the user to pick one. Make sure with your copy that the user understands that a link to the object will be shared with others in the meeting.
 
-After storing the association you will need to signal to Meetin.gs that the creation was a success. You can do this by forwarding the user(within the iframe) to an URL provided to you in the initial POST as the parameter "create\_completed\_url".
+Once the object is confirmed to be shared, you have two main strategies you can choose to store the link between the instance ID and your own material. The first one is to simply use your own database to store an association with the instance ID and your own material and be done with it. However if you do not have an easy way to store such associations or do not want to be responsible for maintaining the associations you can use the "instance\_state" parameter in our database to store a verification hash that you can in the future use to verify that the association is indeed previously confirmed by you.
 
-After this the user is taken to view your newly selected material inside meetings. Your software should thus receive a request to the Show endpoint.
+This happens by simply taking some unique id for your object, concatenate it with a secret of yours and apply a SHA256 algorithm for the resulting string. After this you store the the unique id and the SHA256 signature as the "instance\_state" parameter string in a way that you can parse and verify them in the future. If you wish you can also store some additional data about the association or your material representation in this state parameter but make sure that you insclude all the relevant state information also in your SHA256 signature so that it can not be forget to access unauthorized data in your service.
+
+If you go along with the state string route, you can send the state string to our database along with the process of telling us that the creation process is completed. To do this you add an "instance\_state" parameter to the URL that was provided you in the initial POST request as the parameter "create\_completed\_url" and then forward your user to the resulting URL (maybe inside an iframe). If you store the association yourself you can just pass the user to the "create\_completed\_url" without modifications.
+
+From the create completed URL the user is taken to view your newly selected material inside meetings. Your software should thus receive a request to the Show endpoint with the "instance\_id" and "instance\_state" parameters along with some other data.
 
 ### Show endpoint
 
-When a user opens a material created to have the type of your application, your Show endpoint receives a GET request with the parameter "instance\_id". Your endpoint should return an HTML representation of the object corresponding to the given ID. All the meeting participants can now see it in an iframe inside their Meetin.gs user interface.
+When a user opens a material created to have the type of your application, your Show endpoint receives a GET request with the parameters "instance\_id" and "instance\_state" with some other data. Your endpoint should check that a valid connereturn an HTML representation of the object corresponding to the given ID. All the meeting participants can now see it in an iframe inside their Meetin.gs user interface.
 
 At this point your application is ready for testing! Just make sure your application settings point to these two URLs and start creating new materials. If you want to fine tune some aspects of the display you might want to visit the next chapter at this point. But be sure to come back here for the last chapter to make sure your app is secure.
 
@@ -38,7 +42,7 @@ Here is a code example of how to do this in Perl:
 
     my $expected_sig = $cgi->param("signature");
     my @params = split ",", $cgi->param("keys");
-    my $joined_values = join "", map { $cgi->param( $_ ) } @values;
+    my $joined_values = join "", map { $cgi->param( $_ ) } @params;
     my $sig = Digest::SHA::sha256_base64( $joined_values . $app_secret );
     return ( $expected_sig eq $sig ) ? 1 : 0;
 
