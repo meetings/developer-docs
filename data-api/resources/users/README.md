@@ -1,8 +1,10 @@
 # User resources
 
+The special id "me" points to the current authorized user.
+
 ## Resource representation
 
-The special id "me" points to the current authorized user (todo)
+### Common values
 
     {
         id : s,
@@ -17,17 +19,26 @@ The special id "me" points to the current authorized user (todo)
         linkedin_url : s,
     }
 
+### Additional values for self
+
+    {
+        facebook_user_id : s,
+        alternative_emails : [], (todo)
+    }
+
 ## Fetch
+
+### By id (partial)
+
+This is currently implemented only for the requesting user.
+
+    GET /v1/users/:id
 
 ### By meet me fragment (todo)
 
     GET /v1/users/
 
     matchmaker_fragment : s
-
-### By id (todo)
-
-    GET /v1/users/:id
 
 ## Update (todo) 
 
