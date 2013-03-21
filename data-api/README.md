@@ -1,54 +1,139 @@
-Meetin.gs Data API
-===========
+# Meetin.gs Data API
 
-HTTPS REST. Authenticate using simple tokens or later with OAuth2.
+## REST Resources
 
-https://api.meetin.gs/v1/
+* [Users](resources/users)
+* [Meetings](resources/meetings)
+* [Meeting participants](resources/meeting_participants)
+* [Meeting time proposals](resources/meeting_time_proposals)
+* [Meeting materials](resources/meeting_materials)
+* [Meeting material comments](resources/meeting_material_comments)
+* [Highlighted meetings](resources/highlighted_meetings)
+* [Suggested meetings](resources/suggested_meetings)
+* [Matchmakers](resources/matchmakers)
+* [Matchmaker options](resources/matchmaker_options)
 
-    /meetings.json POST
-    /meetings/ID.json GET PUT DELETE
-    /meetings/ID/participants.json POST GET
-    /meetings/ID/participants/ID.json GET PUT DELETE
-    /meetings/ID/draft_participants.json POST GET
-    /meetings/ID/draft_participants/ID.json GET PUT DELETE
-    /meetings/ID/date_suggestions.json POST GET
-    /meetings/ID/date_suggestions/ID.json GET PUT DELETE
-    /meetings/ID/notifications.json GET
-    /meetings/ID/materials.json POST GET
-    /meetings/ID/materials/ID.json GET PUT DELETE
-    /meetings/ID/materials/ID/notifications.json GET
-    /meetings/ID/materials/ID/comments.json POST GET
-    /meetings/ID/materials/ID/comments/ID.json GET PUT DELETE
+## Action endpoints
 
-    /users.json POST
-    /users/ID.json GET PUT
-    /users/ID/meetings.json POST GET (?created)
-    /users/ID/contacts.json GET
-    /users/ID/notifications.json GET
-    /users/ID/applications.json POST GET DELETE (?controlled ?used)
-    /users/ID/partners.json POST GET DELETE (?controlled ?usable ?authorized)
-    /users/ID/matchmakers.json POST GET
-    /users/ID/matchmakers/ID.json PUT GET DELETE
-    /users/ID/matchmakers/ID/date_suggestions.json POST GET
-    /users/ID/matchmakers/ID/date_suggestions/ID.json PUT GET DELETE
+* [Logging in](actions/login)
+* [Uploading files](actions/uploads)
+* [Checking heartbeats](actions/heartbeat)
+* [Tracking users](actions/track)
 
-    TODO: authenticated services?
-    TODO: alternative emails?
+## General principles
 
-    /sessions.json POST
-    /sessions/ID.json GET
+HTTPS REST + HTTPS action calls. Authenticate using simple tokens or later with OAuth2.
 
-    /partners.json POST
-    /partners/ID/meetings.json POST GET PUT DELETE
+For testing use:
 
-    /matchmaking_events.json POST
-    /matchmaking_events/ID.json GET PUT DELETE
-    /matchmaking_events/ID/matchmakers.json POST GET
+https://api-dev.meetin.gs/
 
-    /applications.json POST GET
-    /applications/ID.json POST GET PUT DELETE
-    /applications/ID/instances/ID.json POST GET PUT
-    /applications/ID/instances/ID/notifications.json POST GET
+For production use:
 
-    /uploads.raw POST
-    /uploads/ID.json GET PUT
+https://api.meetin.gs/
+
+## Return value principles
+
+### Resource endpoints
+
+Resource endpoints return either a json object containg the resource or a json list of the resource objects.
+
+### Other endpoints
+
+Other endpoints return one of keys "result" and "error".
+
+Example of a succesfull non-resource endpoint response:
+
+    {
+        result : 1,
+    }
+
+Example of an unsuccesfull non-resource endpoint response:
+
+    {
+        error : {
+            code : '400',
+            message : 'Unauthorized',
+        },
+    }
+
+# TODO
+
+## Next on the todo list
+
+    FOR MEET MET
+    /users/ID/matchmakers GET
+    /users/ID/matchmakers PUSH
+    /matchmakers/ID/ PUT
+    /matchmakers/ID/ DELETE
+    /matchmakers/ GET
+    /users/ID GET
+
+    FOR AB BROWSING
+    /users/ID/contacts GET
+
+    FOR AB FILLING
+    /users/ID/contacts PUSH
+    /contacts/ID PUT
+
+    FOR ADDING AND DRAFT READY
+    /users/ID/meetings POST
+    /meetings/ID PUT (complete)
+    /meetings/ID/participants POST
+    /meetings/ID/draft_participants POST
+    /meetings/ID/draft_participants GET
+    /draft_participants/ID PUT
+
+
+## Future planned API calls
+
+    /meetings/ID DELETE
+    /participants/ID DELETE
+    /draft_participants/ID DELETE
+    /materials/ID PUT
+    /materials/ID DELETE
+    /comments/ID PUT
+    /comments/ID DELETE
+
+    /meetings/ID/materials/ID/notifications GET (?)
+    /meetings/ID/notifications GET (?)
+
+    /users POST
+    /users/ID GET PUT
+    /users/ID/meetings GET ?created
+    /users/ID/meetings POST
+    /users/ID/notifications GET
+    /users/ID/applications POST 
+    /users/ID/applications GET (?controlled ?used)
+    /users/ID/applications/ID PUT
+    /users/ID/applications/ID DELETE
+    /users/ID/partners POST
+    /users/ID/partners GET (?controlled ?usable ?authorized)
+    /users/ID/partners/ID PUT
+    /users/ID/partners/ID DELETE
+    /users/ID/services POST
+    /users/ID/services GET
+    /users/ID/services/ID PUT
+    /users/ID/services/ID DELETE
+    /users/ID/emails POST
+    /users/ID/emails GET
+    /users/ID/emails/ID PUT
+    /users/ID/emails/ID DELETE
+
+    /sessions POST
+    /sessions/ID GET
+
+    /partners POST
+    /partners/ID/meetings POST GET PUT DELETE
+
+    /matchmaking_events POST
+    /matchmaking_events/ID GET PUT DELETE
+    /matchmaking_events/ID/matchmakers POST GET
+    /matchmaking_events/ID/locations POST GET
+
+    /applications POST GET
+    /applications/ID POST GET PUT DELETE
+    /applications/ID/materials/ID POST GET PUT
+    /applications/ID/materials/ID/notifications POST GET
+
+
