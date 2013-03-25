@@ -32,15 +32,22 @@ The special id "me" points to the current authorized user.
 
 This is currently implemented only for the requesting user.
 
-    GET /v1/users/:id
+    GET /v1/users/:id/
 
-### By meet me fragment (todo)
+    {
+        image_size : i || 50,
+    }
+
+### By meet me fragment
 
     GET /v1/users/
 
-    matchmaker_fragment : s
+    {
+        user_fragment : s,
+        image_size : i || 50,
+    }
 
 ## Update (todo) 
 
-    PUT /v1/users/:id
+    PUT /v1/users/:id/
 

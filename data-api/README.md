@@ -67,7 +67,6 @@ Example of an unsuccesfull non-resource endpoint response:
     /matchmakers/ID/ PUT
     /matchmakers/ID/ DELETE
     /matchmakers/ GET
-    /users/ID GET
 
     FOR AB BROWSING
     /users/ID/contacts GET
