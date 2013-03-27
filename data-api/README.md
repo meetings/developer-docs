@@ -27,6 +27,8 @@ Authenticate using simple tokens or later with OAuth2.
 
 Tokens needed are "user_id" and "dic", which can be sent either in request headers or as post/query params.
 
+### Environments
+
 For testing use:
 
 https://api-dev.meetin.gs/
