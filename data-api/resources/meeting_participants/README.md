@@ -50,7 +50,44 @@
 
     PUT /v1/meetings/:id/participants/:pid
 
-## Insert (todo)
+## Insert
 
-    POST /v1/meeting_participants/
-  
+This will result in either a draft participant or a real participant being created depending on the status of the meeting. To sent invitations out for already created draft participants, use the draft invitation sending action.
+
+    POST /v1/meetings/:id/participants/
+
+### Parameters for adding participants to any type of meeting
+
+Either a known user (must be in the user's address book):
+
+    {
+        user_id : s
+    }
+
+Or by an email and a name:
+
+    {
+        email : s,
+        name : s?, // if name is provided, it overrides the phrase in the email
+    }
+
+### Additional parameters for adding participants to a non-draft meeting
+
+    {
+        greeting_subject : s,
+        greeting_message : s,
+        require_rsvp : 1|0,
+    }
+
+## Actions
+
+### Sending invitations to draft participants in a draft meeting
+
+    POST /v1/meetings/:id/send_draft_participant_invites/
+
+    {
+        greeting_message : s,
+        greeting_message : s,
+        require_rsvp : 1|0,
+    }
+
