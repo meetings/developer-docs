@@ -21,8 +21,11 @@
 * [Tracking users](actions/track)
 
 ## General principles
+HTTPS REST + HTTPS action calls.
+### Authentication
+Authenticate using simple tokens or later with OAuth2.
 
-HTTPS REST + HTTPS action calls. Authenticate using simple tokens or later with OAuth2.
+Tokens needed are "user_id" and "dic", which can be sent either in request headers or as post/query params.
 
 For testing use:
 
