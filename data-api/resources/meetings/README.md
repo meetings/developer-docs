@@ -10,9 +10,11 @@
         "online_conferencing_option" : s, // "skype"|""
         "skype_account" : s, // raw account name
         "begin_date" : s, // yyyy-mm-dd
-        "begin_minute : s, // hh:mm (24h)
+        "begin_time : s, // hh:mm (24h)
+        "begin_epoch": i, // if begin_date and begin_time are defined, they take presendence when storing
         "end_date" : s, //yyyy-mm-dd
-        "end_minute" : s, // hh:mm (24h)
+        "end_time" : s, // hh:mm (24h)
+        "end_epoch": i, // if end_date and end_time are defined, they take presendence when storing
     }
 
 ### Immmutable values in all resource responses
@@ -24,8 +26,6 @@
         "title_string": s,
         "location": s, // transitionally location_string, in the future location_value
         "location_string": s,
-        "begin_epoch": i,
-        "end_epoch": i,
         "date_string": s,
         "time_string": s,
         "skype_url": s,
