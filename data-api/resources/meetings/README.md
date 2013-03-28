@@ -2,30 +2,40 @@
 
 ## Resource representation
 
-### Values in all resource responses
+### Mutable values in a resource
 
     {
-        "id": s*,
-        "location": s*, // transitionally location_string, in the future location_value
-        "location_string": s*,
-        "location_value": s, // transitional, will go away after location is changed to this
-        "time_string": s*,
-        "skype_url": s*,
-        "online_conferencing_option" : s,
-        "skype_account" : s,
-        "created_epoch": i*,
-        "date_string": s*,
-        "enter_url": s*,
-        "created_date_string": s*,
+        "location_value": s, // freeform|"Online"|"" transitional, will go away after location is changed to this
+        "title_value": s, // freeform|"" transitional, will go away after title is changed to this
+        "online_conferencing_option" : s, // "skype"|""
+        "skype_account" : s, // raw account name
+        "begin_date" : s, // yyyy-mm-dd
+        "begin_minute : s, // hh:mm (24h)
+        "end_date" : s, //yyyy-mm-dd
+        "end_minute" : s, // hh:mm (24h)
+    }
+
+### Immmutable values in all resource responses
+
+    {
+        "id": s,
+        "is_draft" : 0|1,
+        "title": s, // transitionally title_string, in the future title_value
+        "title_string": s,
+        "location": s, // transitionally location_string, in the future location_value
+        "location_string": s,
         "begin_epoch": i,
         "end_epoch": i,
-        "timezone_string": s*,
-        "title": s*, // transitionally title_string, in the future title_value
-        "title_string": s*, 
-        "title_value": s, // transitional, will go away after title is changed to this
-    },
+        "date_string": s,
+        "time_string": s,
+        "skype_url": s,
+        "enter_url": s,
+        "created_epoch": i,
+        "created_date_string": s,
+        "timezone_string": s,
+    }
 
-### Additional values in single fetch resource responses
+### Additional immutable values in single fetch resource responses
 
     {
         participants : [ ${participants-resource}, ... ],
