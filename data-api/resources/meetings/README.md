@@ -41,6 +41,12 @@
         participants : [ ${participants-resource}, ... ],
         materials : [ ${materials-resource}, ... ],
         proposals : [ ${time_proposals-resource}, ... ], 
+        invite_greetings : {
+            subject : s,
+            content : s,
+            subject_rsvp : s,
+            content_rsvp : s,
+        },
     }
 
 ## Fetch
