@@ -32,9 +32,17 @@
 
     GET /v1/meetings/:id/materials/
 
-## Update (todo)
+## Update
+
+Shared document contents can be updated by first creating a [meeting material edit](../meeting_material_edits) and then storing it.
 
     PUT /v1/meeting_materials/:id
+
+    {
+        edit_id : s,
+        content : s,
+        old_content : s
+    }
 
 ## Insert
 
@@ -45,4 +53,4 @@
     {
         upload_id : s,
     }
-  
+

@@ -8,6 +8,7 @@
 * [Meeting time proposals](resources/meeting_time_proposals)
 * [Meeting materials](resources/meeting_materials)
 * [Meeting material comments](resources/meeting_material_comments)
+* [Meeting material edits](resources/meeting_material_edits)
 * [Highlighted meetings](resources/highlighted_meetings)
 * [Suggested meetings](resources/suggested_meetings)
 * [Matchmakers](resources/matchmakers)
