@@ -22,6 +22,10 @@ The special id "me" points to the current authorized user.
 ### Additional values for self
 
     {
+        tos_accepted : 1|0,
+        login_allowed_for_partners : [
+            { id : s, name : s }, ..
+        ],
         facebook_user_id : s,
         alternative_emails : [], (todo)
     }
