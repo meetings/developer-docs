@@ -49,6 +49,7 @@
     {
         user_id : s,
         token : s,
+        tos_accepted : 1|0,
     }
 
 ## Verify Facebook token
@@ -67,6 +68,7 @@
     {
         user_id : s,
         token : s,
+        tos_accepted : 1|0,
     }
 
 

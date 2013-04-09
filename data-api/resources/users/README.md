@@ -7,26 +7,29 @@ The special id "me" points to the current authorized user.
 ### Common values
 
     {
-        id : s,
-        name : s,
+        id : s*,
+        name : s, // first_name and last_name take precedence when updating if defined
         first_name : s,
         last_name : s,
-        primary_email : s*,
         phone : s,
         organization : s,
         title : s,
+        linkedin : s,
+        skype : s,
+        primary_email : s*,
         image_url : s*,
-        linkedin_url : s,
+        * upload_id : s,
     }
 
 ### Additional values for self
 
     {
-        tos_accepted : 1|0,
+        timezone : s,
+        tos_accepted : 1|0, // can only be set from false to true
         login_allowed_for_partners : [
             { id : s, name : s }, ..
-        ],
-        facebook_user_id : s,
+        ]*,
+        facebook_user_id : s*,
         alternative_emails : [], (todo)
     }
 
@@ -51,7 +54,9 @@ This is currently implemented only for the requesting user.
         image_size : i || 50,
     }
 
-## Update (todo) 
+## Update (partial)
+
+This is currently implemented only for the requesting user.
 
     PUT /v1/users/:id/
 
