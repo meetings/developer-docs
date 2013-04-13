@@ -9,12 +9,12 @@
         "title_value": s, // freeform|"" transitional, will go away after title is changed to this
         "online_conferencing_option" : s, // "skype"|""
         "skype_account" : s, // raw account name
-        "begin_date" : s, // yyyy-mm-dd
-        "begin_time : s, // hh:mm (24h)
-        "begin_epoch": i, // if begin_date and begin_time are defined, they take presendence when storing
-        "end_date" : s, //yyyy-mm-dd
-        "end_time" : s, // hh:mm (24h)
-        "end_epoch": i, // if end_date and end_time are defined, they take presendence when storing
+        "begin_date" : s, // yyyy-mm-dd - uses timezone stored for user object
+        "begin_time : s, // hh:mm (24h) - uses timezone stored for user object
+        "begin_epoch": i, // takes preference over string versions if defined when updating and creating
+        "end_date" : s, // yyyy-mm-dd - uses timezone stored for user object
+        "end_time" : s, // hh:mm (24h) - uses timezone stored for user object
+        "end_epoch": i,  // takes preference over string versions if defined when updating and creating
     }
 
 ### Immmutable values in all resource responses
