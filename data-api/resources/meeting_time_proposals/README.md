@@ -4,6 +4,8 @@
 
     {
         id => s,
+        begin_epoch => i,
+        end_epoch => i,
         time_string => s,
         date_string => s,
         timezone_string => s,
