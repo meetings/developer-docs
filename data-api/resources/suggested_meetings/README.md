@@ -40,4 +40,28 @@ Don't use this :P It was a quick hack for the summary
     {
         disabled : 1,
     }
-  
+
+## Batch import
+
+For making sure certain meeting suggestions exist in Meetin.gs you pass a JSON array string containing suggestion objects in the http parameter "batch":
+
+    POST /v1/users/:id/suggested_meetings/batch_insert
+
+    {
+        batch : '[ { "begin_epoch" : i, "end_epoch" : i, "title" : s }, ... ]'
+    }
+
+The possible parameters for a suggestion are:
+
+    {
+        title : s,
+        begin_epoch : i,
+        end_epoch : i,
+        uid : s,
+        description : s,
+        location : s,
+        source : s,
+        participant_list : s, // '"Antti" <antti@meetin.gs>, "Jussi" <jussi@meetin.gs>'
+        organizer : s, // '"Antti" <antti@meetin.gs>'
+    }
+
