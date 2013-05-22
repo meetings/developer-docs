@@ -13,6 +13,7 @@
 * [Suggested meetings](resources/suggested_meetings)
 * [Matchmakers](resources/matchmakers)
 * [Matchmaker options](resources/matchmaker_options)
+* [Suggestion sources](resources/suggestion_sources)
 
 ## Action endpoints
 
