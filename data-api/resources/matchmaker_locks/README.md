@@ -4,16 +4,21 @@
     {
         id : s,
         matchmaker_id : s,
+
         start_epoch : i,
         end_epoch : i,
-        agenda : s,
 
+        agenda : s,
+        expected_confirmer_id : s,
+
+        title : s,
         times_string : s, // using the matchmaker time zone
         creator_id : s,
-        expected_confirmer_id : s, // can be a user just created in confirm reservation 
         location_id : s, // currently can not be set, will be set automatically if need be
         location_string : s, // either from location_id location or from matchmaker
         created_meeting_id : s,
+        created_meeting_gcal_url : s,
+        created_meeting_calendar_url : s,
         creation_epoch : i,
         expire_epoch : i,
         cancel_epoch : i,
