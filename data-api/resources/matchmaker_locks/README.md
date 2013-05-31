@@ -34,20 +34,6 @@
     
     {
         agenda : s, // proposed agenda as text, can contain line changes
-    }
-
-    Additional profile parameters to pass in if user is not logged in:
-
-    {
-        email : s, // mandatory if user not logged in
-        name : s, // first_name and last_name take precedence when updating if defined
-        first_name : s,
-        last_name : s,
-        phone : s,
-        organization : s,
-        title : s,
-        linkedin : s,
-        skype : s,
-        * upload_id : s,
+        expected_confirmer_id : s
     }
 

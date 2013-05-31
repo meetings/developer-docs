@@ -24,7 +24,8 @@ The special id "me" points to the current authorized user.
 ### Additional values for self
 
     {
-        timezone : s,
+        timezone : s, // deprecated for time_zone
+        time_zone : s,
         tos_accepted : 1|0, // can only be set from false to true
         login_allowed_for_partners : [
             { id : s, name : s }, ..
@@ -54,7 +55,33 @@ This is currently implemented only for the requesting user.
         image_size : i || 50,
     }
 
-## Update (partial)
+### By email
+
+    GET /v1/users/
+
+    {
+        email : s,
+        image_size : i || 50,
+    }
+
+    Returns data depending on the connection with the authenticated user. Always returns at least the id even when not authenticated.
+
+## Create a non-existing user
+
+Currently implemented only as part of the matchmaker reservation flow.
+
+    POST /v1/users/
+
+    Additional required params when creating:
+
+    {
+        machmaker_lock_id : s, // unique active lock required in order to create
+        primary_email : s, // mandatory for now, returns error if user exists
+    }
+
+    Returns error if user already exists
+
+## Update
 
 This is currently implemented only for the requesting user.
 
