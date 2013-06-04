@@ -33,6 +33,16 @@
         end_epoch : i,
     }
 
+    OR
+
+    POST /v1/matchmaker_locks
+
+    {
+        matchmaker_id : i,
+        begin_epoch : i,
+        end_epoch : i,
+    }
+
 ## Cancel lock
 
     DELETE /v1/matchmaker_locks/:id
