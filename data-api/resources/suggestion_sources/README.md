@@ -4,8 +4,14 @@
 
     {
         id => s,
+        uuid => s,
         name => s,
-        type => s
+        created_epoch => i,
+        hidden_epoch => i,
+        last_verify_epoch => i,
+        last_activity_epoch => i,
+        container_type => s, // phone | google | other
+        container_id => s,
     }
 
 ## List

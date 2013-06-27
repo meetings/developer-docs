@@ -4,6 +4,7 @@
     {
         id : s,
         matchmaker_id : s,
+        matchmaking_event_id : s,
 
         start_epoch : i,
         end_epoch : i,
@@ -16,9 +17,10 @@
         creator_id : s,
         location_id : s, // currently can not be set, will be set automatically if need be
         location_string : s, // either from location_id location or from matchmaker
-        created_meeting_id : s,
-        created_meeting_gcal_url : s,
-        created_meeting_calendar_url : s,
+        accepted_meeting_id : s,
+        accepter_name : s,
+        tentative_gcal_url : s,
+        tentative_calendar_url : s,
         creation_epoch : i,
         expire_epoch : i,
         cancel_epoch : i,
@@ -29,7 +31,7 @@
     POST /v1/matchmakers/:id/locks
 
     {
-        begin_epoch : i,
+        start_epoch : i,
         end_epoch : i,
     }
 
@@ -67,7 +69,7 @@ Emails the confirmer and the matchmaking owner about next actions
     PUT /v1/matchmaker_locks/:id
 
     {
-        agenda : s, // proposed agenda as text, can contain line changes
+        agenda : s, // proposed agenda as text, can contain line changes, updates old only if exists
     }
 
 ## Get lock info

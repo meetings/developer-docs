@@ -79,7 +79,11 @@ Currently implemented only as part of the matchmaker reservation flow.
         primary_email : s, // mandatory for now, returns error if user exists
     }
 
-    Returns error if user already exists
+    Returns error if user already exists or an user has already been created for the lock. On success returns simply:
+
+    {
+        id : s,
+    }
 
 ## Update
 
