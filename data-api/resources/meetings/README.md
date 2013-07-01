@@ -15,6 +15,7 @@
         "end_date" : s, // yyyy-mm-dd - uses timezone stored for user object
         "end_time" : s, // hh:mm (24h) - uses timezone stored for user object
         "end_epoch": i,  // takes preference over string versions if defined when updating and creating
+        "matchmaking_accepted": 0|1, // Can not be set to 0 if set to 1
     }
 
 ### Immmutable values in all resource responses
@@ -32,6 +33,7 @@
         "enter_url": s,
         "created_epoch": i,
         "created_date_string": s,
+        "created_from_matchmaker_id" : s,
         "timezone_string": s,
     }
 
@@ -78,4 +80,16 @@ However this functionality will go away at some point and will be replaced with 
 ## Insert
 
     POST /v1/meetings/
-  
+
+## Remove
+
+    DELETE /v1/meetings/:id
+
+## Action: decline proposed meeting and send reason to users
+
+    POST /v1/meetings/:id/matchmaking_decline
+
+Additional parameter for telling a reason:
+
+    decline_message
+
