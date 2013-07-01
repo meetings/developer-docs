@@ -34,6 +34,8 @@
         "created_epoch": i,
         "created_date_string": s,
         "created_from_matchmaker_id" : s,
+        "matchmaking_requester_name" : s,
+        "matchmaking_event_name" : s,
         "timezone_string": s,
     }
 
