@@ -19,6 +19,10 @@ The special id "me" points to the current authorized user.
         primary_email : s*,
         image_url : s*,
         * upload_id : s,
+        meetme_description : s,
+        meetme_mackground_theme : 'u'|'c'|[number],
+        meetme_background_image_url : s, // stored only if theme is 'u'
+        * meetme_background_upload_id : s // takes effect with theme 'c'
     }
 
 ### Additional values for self
@@ -32,7 +36,11 @@ The special id "me" points to the current authorized user.
         ]*,
         facebook_user_id : s*,
         alternative_emails : [], (todo)
-    }
+        is_pro : 1|0,
+        is_trial_pro : 1|0,
+        matchmaker_fragment : s, // deprecated over meetme_fragment
+        meetme_fragment : s,
+}
 
 ## Fetch
 
