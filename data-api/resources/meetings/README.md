@@ -5,8 +5,8 @@
 ### Mutable values in a resource
 
     {
-        "location_value": s, // freeform|"Online"|"" transitional, will go away after location is changed to this
-        "title_value": s, // freeform|"" transitional, will go away after title is changed to this
+        "location_value": s, // freeform|"Online"|""
+        "title_value": s, // freeform|""
         "online_conferencing_option" : s, // "skype"|""
         "skype_account" : s, // raw account name
         "begin_date" : s, // yyyy-mm-dd - uses timezone stored for user object
@@ -23,9 +23,9 @@
     {
         "id": s,
         "is_draft" : 0|1,
-        "title": s, // transitionally title_string, in the future title_value
+        "title": s, // transitionally title_string, in the future title_value, do not use this yet
         "title_string": s,
-        "location": s, // transitionally location_string, in the future location_value
+        "location": s, // transitionally location_string, in the future location_value, do not use this yet
         "location_string": s,
         "date_string": s,
         "time_string": s,
