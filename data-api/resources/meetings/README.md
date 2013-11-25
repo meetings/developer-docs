@@ -62,6 +62,16 @@
     GET /v1/users/:id/meetings/
 
     GET /v1/users/:id/unscheduled_meetings/ (should me merged to the previous with a param)
+    
+    {
+        user_id : resolve_param_user_id( req ),
+        limit : req.query.limit || 10,
+        offset : req.query.offset || 0,
+        start_min : req.query.start_min || '',
+        start_max : req.query.start_max || '',
+        sort : req.query.sort || 'desc',
+        include_draft : req.query.include_draft || 0
+    }
 
 ### Special hack
 
