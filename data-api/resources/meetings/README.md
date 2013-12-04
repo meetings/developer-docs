@@ -61,17 +61,18 @@
 
     GET /v1/users/:id/meetings/
 
-    GET /v1/users/:id/unscheduled_meetings/ (should me merged to the previous with a param)
-    
     {
         user_id : resolve_param_user_id( req ),
-        limit : req.query.limit || 10,
-        offset : req.query.offset || 0,
-        start_min : req.query.start_min || '',
-        start_max : req.query.start_max || '',
-        sort : req.query.sort || 'desc',
-        include_draft : req.query.include_draft || 0
+        limit : req.query.limit || 10, // i
+        offset : req.query.offset || 0, // i
+        start_min : req.query.start_min || '', // epoch
+        start_max : req.query.start_max || '', // epoch
+        sort : req.query.sort || 'desc', // a|asc|ascending|d|desc|descending
+        include_draft : req.query.include_draft || 0 // 1|0
     }
+
+    GET /v1/users/:id/unscheduled_meetings/ (should me merged to the previous with a param)
+
 
 ### Special hack
 
