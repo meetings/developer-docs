@@ -97,6 +97,8 @@ However this functionality will go away at some point and will be replaced with 
 In addition to normal function, you can pass in the id for a meeting_suggestion object to activate:
 
     from_suggestion_id
+    
+If you do this, no further parameters are used and the meeting is created from the data found in this suggestion.
 
 ## Remove
 
