@@ -94,6 +94,10 @@ However this functionality will go away at some point and will be replaced with 
 
     POST /v1/meetings/
 
+In addition to normal function, you can pass in the id for a meeting_suggestion object to activate:
+
+    from_suggestion_id
+
 ## Remove
 
     DELETE /v1/meetings/:id
