@@ -14,6 +14,7 @@
         "edited_epoch": i,
         "comment_count": i,
         "fetch_type": s,
+        "material_class: "agenda" | "action_points" | "other",
         "title": s,
 
         "content": s,
