@@ -37,15 +37,16 @@
         "matchmaking_requester_name" : s,
         "matchmaking_event_name" : s,
         "timezone_string": s,
-        "participants" : [ ${participants-resource}, ... ],
         "responded_participants_count" : i,
+
+        "participants" : [ ${participants-resource}, ... ],
+        "proposals" : [ ${time_proposals-resource}, ... ], 
     }
 
 ### Additional immutable values in single fetch resource responses
 
     {
         materials : [ ${materials-resource}, ... ],
-        proposals : [ ${time_proposals-resource}, ... ], 
         invite_greetings : {
             subject : s,
             content : s,
