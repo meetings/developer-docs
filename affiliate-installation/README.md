@@ -6,7 +6,7 @@ Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles
 
 ### 1. Get an API key
 
-For now registration is done manually by emailing to antti@dicole.com. You should also let us know your token-to-email -endpoint url (see next step).
+For now registration is done manually by emailing to antti@meetin.gs. You should also let us know your token-to-email -endpoint url (see next step).
 
 ### 2. Create an token-to-email exhcange endpoint
 We do not want you to have to expose user emails on your pages, so we require you to create an token-to-email exchange endpoint that we will use to retrieve use emails. The endpoint shoud work in the following way.
@@ -30,16 +30,21 @@ Currently the only security feature is that the endpoint URL should be secret an
 ### 3. Install our script on your site
 Add the following script tag with your API key on the pages you want to use the Meet Me -buttons. The script will find all Meet Me -button elements on pageload and convert them to Meet Me -buttons.
 
-    <script id="mtn_affliate_script" data-api-key="YOUR_API_KEY" defer="defer" src="https://platform.meetin.gs/mtn_affiliate.js" type="text/javascript"></script>
+##### Tag
+    <script id="mtn_affliate_script" data-api-key="YOUR_API_KEY" data-disable-unregistered="1" defer="defer" src="https://platform.meetin.gs/mtn_affiliate.js" type="text/javascript"></script>
+
+##### Editable attributes
+    data-api-key - your own api key
+    data-disable-unregistered - if set, buttons are not shown for non Meetin.gs users
 
 If you add/change page content dynamically, you can always use the following call to intialize the new Meet Me -buttons currently on page.
 
     MTN.init();
 
-### 4. Create Meet Me button markup where wanted
+### 4. Add Meet Me button markup to add buttons
 Adding the following markup will create a Meet Me -button pointing to the user whose email matches the token.
 
-    <script type="MTN/app" data-token="USER_TOKEN" data-type="meetme|schedule"></script>
+    <script type="MTN/app" data-token="USER_TOKEN" data-type="meetme|schedule" data-color="blue|silver|gray|dark"></script>
 
 
 
