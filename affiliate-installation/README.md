@@ -51,6 +51,10 @@ A properly formatted CSV file must be UTF-8 encoded, must contain unique column 
 
 The CSV file can also additional columns, all of which are passed to the Meetin.gs button customization infrastructure as named parameters. If an additional column conflicts with one of Meetin.gs provided additional columns, the value acts as a default value. Default values will be replaced with Meetin.gs values if the user in question has registered to Meetin.gs and the information in question has been provided for that user.
 
+We encourage using a Google Spreadsheets document which can be easily shared in CSV form using an URL. You can for example duplicate the test document that is used to generate the initial testing CSV:
+
+https://docs.google.com/a/dicole.com/spreadsheet/ccc?key=0AqnOWbpvdZ0qdFRUM0lTeDdnblBQekxiajdVSGduSWc
+
 #### 4.2 Option 2: Provide a HTTP service for the translations
 
 When a request to display a Meetin.gs scheduler button arrives from the client, Meetin.gs sends a HTTP GET request to an URL that you have specified. Two query parameters are added to the URL, overwriting existing parameters if they exist:
