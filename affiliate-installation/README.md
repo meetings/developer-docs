@@ -20,7 +20,7 @@ We do not want you to have to expose user emails on your pages, so we require yo
     {
         "email" : "user@email.com"
     }
-    3
+
 ##### Response failure
     
     Status: 404 Not found
