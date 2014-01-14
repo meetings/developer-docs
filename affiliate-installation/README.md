@@ -9,7 +9,7 @@ Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles
 For now registration is done manually by emailing to antti@meetin.gs. You should also let us know your token-to-email -endpoint url (see next step).
 
 ### 2. Create an token-to-email exhcange endpoint
-We do not want you to have to expose user emails on your pages, so we require you to create an token-to-email exchange endpoint that we will use to retrieve use emails. The endpoint shoud work in the following way.
+We do not want you to have to expose user emails on your pages, so we require you to create an token-to-email exchange endpoint that we will use to retrieve user emails. The endpoint shoud work in the following way.
 
 ##### Request
     GET https://yoursite.com/secret_token_to_email_url/?token=TOKEN&checksum=CHECKSUM
