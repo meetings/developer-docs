@@ -11,15 +11,19 @@ For now registration is done manually by emailing to antti@dicole.com. You shoul
 ### 2. Create an token-to-email exhcange endpoint
 We do not want you to have to expose user emails on your pages, so we require you to create an token-to-email exchange endpoint that we will use to retrieve use emails. The endpoint shoud work in the following way.
 
-#### Request
+##### Request
     GET https://yoursite.com/secret_token_to_email_url/?token=TOKEN&checksum=CHECKSUM
 
-#### Response
+##### Response success
     
     Status: 200 OK
     {
         "email" : "user@email.com"
     }
+    3
+##### Response failure
+    
+    Status: 404 Not found
 
 Currently the only security feature is that the endpoint URL should be secret and the requests should go over HTTPS.
 
