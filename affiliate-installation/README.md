@@ -1,5 +1,6 @@
 # Meetin.gs affiliate documentation
-Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles to facilitate easy meeting scheduling.
+
+Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles to facilitate easy meeting scheduling. This document also details how Meetin.gs can be used to easily implement rich user listings.
 
 ## Setup process
 
@@ -8,6 +9,7 @@ Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles
 For now registration is done manually by emailing to antti@meetin.gs. We will create you an application that is initially set up in development mode and can return data for a couple of USER\_TOKENs provided by our test CSV file. After the development phase you can can choose from several ways to handle the USER\_TOKEN translation.
 
 ### 2. Install our script on your site
+
 Add the following script tag with your API key on the pages you want to use the Meet Me -buttons. The script will find all Meet Me -button elements on pageload and convert them to Meet Me -buttons.
 
 ##### Tag
@@ -24,24 +26,35 @@ If you add/change page content dynamically, you can always use the following cal
     MTN.init();
 
 ### 3. Add Meet Me button markup to add buttons
+
 Adding the following markup will create a Meet Me -button pointing to the user matching USER\_TOKEN.
 
     <script type="MTN/app" data-token="USER_TOKEN" data-type="meetme|schedule" data-color="blue|silver|gray|dark"></script>
     
-### 4. Provide a method for translating USER_TOKENs to emails
+### 4. Provide a method for translating USER\_TOKENs to emails
+
 In Meetin.gs users are identified by their email, but we don not want you to place those emails to customers' client side pages. Thus we need a way for you to translate the USER\_TOKEN values you use to the actual user emails you want to query.
 
-Currently Meetin.gs supports two main options: 1. An URL to a properly formatted CSV file and 2. A HTTP service for the translations. These approaches are detailed further in the upcoming subsections.
+Currently Meetin.gs supports two main options: 1. A URL to a properly formatted CSV file and 2. A HTTP service for the translations. These approaches are detailed further in the upcoming subsections.
 
 A method relying on symmetric encryption of the emails is on the roadmap and will be prioritized according to developer interest.
 
 #### 4.1 Option 1: Provide a URL to a properly formatted CSV
 
-A properly formatted CSV file must be UTF-8 encoded, must contain unique column names as the first row and must contain the column names "TOKEN" and "EMAIL" (case insensisive). Here is the CSV spec we consider appropriate: http://tools.ietf.org/html/rfc4180
+A properly formatted CSV file must be UTF-8 encoded, must contain unique column names as the first row and must contain the column names "TOKEN" and "EMAIL" (case insensisive). Here is the CSV spec we honor: http://tools.ietf.org/html/rfc4180
 
-The CSV file can also contain additional columns. Some of these are used to prefill the returned user data if the user is not yet a registered Meetin.gs user.
+The CSV file can also additional columns, all of which are passed to the Meetin.gs button customization infrastructure as named parameters. If an additional column conflicts with one of Meetin.gs provided additional columns, the value acts as a default value. Default values will be replaced with Meetin.gs values if the user in question has registered to Meetin.gs and the information in question has been provided for that user.
 
 #### 4.2 Option 2: Provide a HTTP service for the translations
+
+When a request to display a Meetin.gs scheduler button arrives from the client, Meetin.gs sends a HTTP GET request to an URL that you have specified. Two query parameters are added to the URL, overwriting existing parameters if they exist:
+
+    token - the user token that should be used to look up the email of the target user
+    checksum - not implemented yet
+
+Your HTTP endpoint should return with a simple UTF-8 encoded JSON object structure that contains at least the key "email".
+
+The response object can also contain additional keys, all of which are passed to the Meetin.gs button customization infrastructure as named parameters. If an additional column conflicts with one of Meetin.gs provided additional columns, the value acts as a default value. Default values will be replaced with Meetin.gs values if the user in question has registered to Meetin.gs and the information in question has been provided for that user.
 
 ##### Request that Meetin.gs makes to your site
 
@@ -50,9 +63,23 @@ The CSV file can also contain additional columns. Some of these are used to pref
 ##### Response you send on success
 
     Status: 200 OK
-    Response Body: user@email.com
+    
+    Required response body:
+    {
+        "email" : "user@email.com"
+    }
+    
+    Optional response body example:
+    {
+        "email" : "user@email.com",
+        "first_name" : "Bill",
+        "last_name" : "Anderson",
+        "title" : "CTO",
+        "organization" : "Matrix Corp",
+        "your\_custom\_parameter" : "your_value"
+    }
 
-##### Response you send on failure
+##### Response you send for users that can not be found
     
     Status: 404 Not found
 
