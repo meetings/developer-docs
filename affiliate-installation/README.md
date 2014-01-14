@@ -35,7 +35,7 @@ Currently Meetin.gs supports two main options: 1. An URL to a properly formatted
 
 A method relying on symmetric encryption of the emails is on the roadmap and will be prioritized according to developer interest.
 
-#### 4.1 Option 1: Provide a properly formatted CSV file
+#### 4.1 Option 1: Provide a URL to a properly formatted CSV
 
 A properly formatted CSV file must be UTF-8 encoded, must contain unique column names as the first row and must contain the column names "TOKEN" and "EMAIL" (case insensisive). Here is the CSV spec we consider appropriate: http://tools.ietf.org/html/rfc4180
 
