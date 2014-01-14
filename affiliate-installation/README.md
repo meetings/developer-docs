@@ -6,7 +6,7 @@ Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles
 
 ### 1. Register an application to get an API key
 
-For now registration is done manually by emailing to antti@meetin.gs. We will create you an application that is initially set up in development mode and can return data for a couple of USER\_TOKENs provided by our test CSV file. After the development phase you can can choose from several ways to handle the USER\_TOKEN translation.
+For now registration is done manually by emailing to antti@meetin.gs. We will create you an application that is initially set up in development mode and can return data for a couple of USER\_TOKENs provided by our test CSV file. After initial development you can can choose from several ways to handle the USER\_TOKEN translation.
 
 ### 2. Install our script on your site
 
@@ -14,14 +14,20 @@ Add the following script tag with your API key on the pages you want to use the 
 
 ##### Tag
 
-    <script id="mtn_affliate_script" data-api-key="YOUR_API_KEY" data-disable-unregistered="1" defer="defer" src="https://platform.meetin.gs/mtn_affiliate.js" type="text/javascript"></script>
+    <script type="text/javascript" id="mtn_affliate_script" data-api-key="YOUR_API_KEY"
+        src="https://platform.meetin.gs/mtn_affiliate.js" defer="defer"></script>
 
-##### Editable attributes
+##### Required attributes
 
-    data-api-key - your own api key
-    data-disable-unregistered - if set, buttons are not shown for non Meetin.gs users
+    data-api-key - Your application ID
 
-If you add/change page content dynamically, you can always use the following call to intialize the new Meet Me -buttons currently on page.
+##### Additional attributes
+
+    data-current-user-token - token which is used to determine if a button belongs to currenty logged in user
+    data-disable-unregistered - if set to 1, buttons are not shown for users who have not registered to Meetin.gs
+    data-disable-autoinit - if set to 1, MTN.init() is not called on page load automatically
+
+If you add/change page content dynamically, you can always use the following call to intialize the new Meet Me -buttons currently on the page.
 
     MTN.init();
 
@@ -76,7 +82,7 @@ The response object can also contain additional keys, all of which are passed to
         "last_name" : "Anderson",
         "title" : "CTO",
         "organization" : "Matrix Corp",
-        "your\_custom\_parameter" : "your_value"
+        "your_custom_parameter" : "your_value"
     }
 
 ##### Response you send for users that can not be found
