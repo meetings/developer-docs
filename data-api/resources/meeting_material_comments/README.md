@@ -4,49 +4,61 @@
 
     {
         "id": s,
+        "content": s, // this is the only writable element
+        "content_plaintext": s,
+        "content_stripped": s,
+        "date_epoch": i,
+        "user_image": s,
+        "user_initials": s,
+        "user_name": s,
+        "user_organization": s,
+
         "is_private": s,
         "date": s,
-        "content": s,
         "edited_by": s,
         "date_ago": s,
         "datetimestamp": s,
         "order": i,
-        "content_stripped": s,
         "post_id": s,
-        "content_plaintext": s,
-        "user_image": s,
         "edited": i,
         "thread_id": s,
         "ts": i,
         "depth": i,
-        "user_organization": s,
         "parent_post_id": s,
-        "user_name": s,
         "last_changed": i,
         "published": i,
         "content_raw": s,
         "user_id": s,
-        "date_epoch": i,
-        "user_initials": s,
     }
 
 ## List
 
     GET /v1/meeting_materials/:id/comments/
-
-### Previous endpoint (deprecated)
-
-    GET /v1/materials/:id/comments/
-
-## Update (todo)
-
-    PUT /v1/meeting_material_comments/:id/
+    
+    {
+        image_size : i, // what is the height and width of the profile images returned for commenters
+    }
 
 ## Insert
 
     POST /v1/meeting_materials/:id/comments/
 
-### Previous endpoint (deprecated)
+    {
+        content : s,
+        image_size : i,
+    }
 
-    POST /v1/materials/:id/comments/
+## Update (todo)
+
+    PUT /v1/meeting_material_comments/:id/
+
+    {
+        content : s,
+        image_size : i,
+    }
+
+## Remove (todo)
+
+    PUT /v1/meeting_material_comments/:id/
+
   
