@@ -45,6 +45,11 @@
 ## Update
 
     PUT /v1/meeting_participants/:id
+    
+    {
+        "rsvp" : "yes" | "no",
+        "proposal_answers" : ???
+    }
 
 ### Legacy version which operates with meeting\_id & user\_id
 
