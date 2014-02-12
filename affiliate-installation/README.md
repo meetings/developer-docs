@@ -119,18 +119,25 @@ The response object can also contain additional keys, all of which are passed to
 
 Currently the only security feature for your endpoint is that the endpoint URL should be secret and the requests should go over HTTPS. A further feature for verifying that the sender of the request is indeed Meetin.gs, we will offer a way to calculate a SHA1 hash composed of the USER_TOKEN and an application specific shared secret.
 
+### 5. OPTIONAL: Override button visual rendering
 
+In some cases custom visuals and custom functionality using the backend extra parameters are required. For this purpose you can define a set of functions to handle rendering of an individual's representation in the list.
 
+All of the functions receive two parameters:
 
+    1. HTML node of the "script" tag that denotes the place where the button should be rendered
+    2. Javascript Object which contains all the default and additional parameters as keys
+    3. Value 1 or 0 indicating if this button should be rendered for the currently logged in user
 
+The functions are called immediately when the users data has been received and they should replace the received node in the DOM with the individual's representation.
 
+The functions can be defined in a javascript object that is defined before the script executes with the following syntax:
 
+    <script type="text/javascript">
+        window.MTN = window.MTN || {};
+        window.MTN.custom_user_data_receved_handler = function( node, data, for_self ) {
+            // Your custom rendering here
+        };
+     </script>
 
-
-
-
-
-
-
-
-
+The second handler is called if data-current-user-token attribute was specified and matches teh current token. Otherwise the first handler will be called.
