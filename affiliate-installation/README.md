@@ -140,4 +140,4 @@ The functions can be defined in a javascript object that is defined before the s
         };
      </script>
 
-The second handler is called if data-current-user-token attribute was specified and matches teh current token. Otherwise the first handler will be called.
+The second handler is called if data-current-user-token attribute was specified and matches the current token. Otherwise the first handler will be called.
