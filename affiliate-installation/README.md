@@ -10,7 +10,7 @@ For now registration is done manually by emailing to antti@meetin.gs. We will cr
 
 ### 2. Install our script on your site
 
-Add the following script tag with your API key on the pages you want to use the Meet Me -buttons. The script will find all Meet Me -button elements on pageload and convert them to Meet Me -buttons.
+Add the following script tag with your API key on the pages you want to use the Meet Me -buttons. The script will find all Meet Me button elements and Meet Me list elements on pageload and convert them to Meet Me -buttons.
 
 ##### Tag
 
@@ -31,12 +31,36 @@ If you add/change page content dynamically, you can always use the following cal
 
     MTN.init();
 
-### 3. Add Meet Me button markup to add buttons
+### 3. Add button or button list markup to add buttons
 
-Adding the following markup will create a Meet Me -button pointing to the user matching USER\_TOKEN.
+##### Button markup
 
-    <script type="MTN/app" data-token="USER_TOKEN" data-type="meetme|schedule" data-color="blue|silver|gray|dark"></script>
-    
+Adding the following markup will create a Meet Me -button pointing to the user matching USER\_TOKEN:
+
+    <script type="MTN/button" data-token="USER_TOKEN"></script>
+
+##### Button list markup
+
+Adding the following markup will create a list of meet me buttons for all users in the associated application backend:
+
+    <script type="MTN/list"></script>
+
+##### Additional attributes for both markups
+
+If one of these attributes is given for the button list markup, they will be added to all resulting buttons.
+
+    data-mode - full|button
+    data-type - meetme|schedule
+    data-color - blue|silver|gray|dark
+    data-disable-organization - If set to 1, no organization is included in the full button 
+    data-disable-title - If set to 1, no title is included in the full button
+    data-disable-first-name - If set to 1, no first name is included in the full button
+    data-disable-last-name - If set to 1, no last name is included in the full button
+
+##### Additional attributes fot button list markup
+
+    data-match - For example the value "Department=Sales" would limit the list of people to those who have the custom "Department" -field set to "Sales".
+
 ### 4. Provide a method for translating USER\_TOKENs to emails
 
 In Meetin.gs users are identified by their email, but we don not want you to place those emails to customers' client side pages. Thus we need a way for you to translate the USER\_TOKEN values you use to the actual user emails you want to query.
