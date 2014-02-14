@@ -121,17 +121,17 @@ Currently the only security feature for your endpoint is that the endpoint URL s
 
 ### 5. OPTIONAL: Override button visual rendering
 
-In some cases custom visuals and custom functionality using the backend extra parameters are required. For this purpose you can define a set of functions to handle rendering of an individual's representation in the list.
+In some cases custom visuals and custom functionality using the backend extra parameters are required. For this purpose you can define a function to handle rendering of an individual's representation in the list.
 
-All of the functions receive two parameters:
+The function will receive three parameters:
 
     1. HTML node of the "script" tag that denotes the place where the button should be rendered
     2. Javascript Object which contains all the default and additional parameters as keys
     3. Value 1 or 0 indicating if this button should be rendered for the currently logged in user
 
-The functions are called immediately when the users data has been received and they should replace the received node in the DOM with the individual's representation.
+The function is called immediately when the users data has been received and they should replace the received node in the DOM with the individual's representation.
 
-The functions can be defined in a javascript object that is defined before the script executes with the following syntax:
+The function can be defined in a javascript object that is defined before the script executes with the following syntax:
 
     <script type="text/javascript">
         window.MTN = window.MTN || {};
@@ -140,4 +140,8 @@ The functions can be defined in a javascript object that is defined before the s
         };
      </script>
 
-The second handler is called if data-current-user-token attribute was specified and matches the current token. Otherwise the first handler will be called.
+Or if you are calling MTN.init() from your own code you can pass the custom render function like so:
+
+    MTN.init({ custom_user_data_received_handler : function( node, data, for_self ) { 
+        // Your custom rendering here
+    }});
