@@ -135,7 +135,7 @@ The functions can be defined in a javascript object that is defined before the s
 
     <script type="text/javascript">
         window.MTN = window.MTN || {};
-        window.MTN.custom_user_data_receved_handler = function( node, data, for_self ) {
+        window.MTN.custom_user_data_received_handler = function( node, data, for_self ) {
             // Your custom rendering here
         };
      </script>
