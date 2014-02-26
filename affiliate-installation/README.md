@@ -8,6 +8,8 @@ Meetin.gs registered affiliates can add Meet Me -buttons on their users profiles
 
 For now registration is done manually by emailing to antti@meetin.gs. We will create you an application that is initially set up in development mode and can return data for a couple of USER\_TOKENs provided by our test CSV file. After initial development you can can choose from several ways to handle the USER\_TOKEN translation.
 
+For testing purposes you can use "test" as an API key. You can see an example gallery using "test" -API key here: [platform.meetin.gs](http://platform.meetin.gs)
+
 ### 2. Install our script on your site
 
 Add the following script tag with your API key on the pages you want to use the Meet Me -buttons. The script will find all Meet Me button elements and Meet Me list elements on pageload and convert them to Meet Me -buttons.
