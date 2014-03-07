@@ -85,13 +85,13 @@ A new material was added to the meeting
 
 ## Fetch (NOT IMPLEMENTED YET)
 
-    GET /v1/users/:uid/notifications/:id
+~~GET /v1/users/:uid/notifications/:id~~
 
-## Update (NOT IMPLEMENTED YET)
+## Update
 
-Single:
+Single: (NOT IMPLEMENTED YET)
 
-    PUSH /v1/users/:uid/notifications/:id/mark_seen
+~~PUSH /v1/users/:uid/notifications/:id/mark_seen~~
 
 All at once:
 
