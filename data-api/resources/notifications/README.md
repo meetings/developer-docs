@@ -91,11 +91,11 @@ A new material was added to the meeting
 
 Single: (NOT IMPLEMENTED YET)
 
-~~PUSH /v1/users/:uid/notifications/:id/mark_seen~~
+~~POST /v1/users/:uid/notifications/:id/mark_seen~~
 
 All at once:
 
-    PUSH /v1/users/:uid/notifications/mark_seen
+    POST /v1/users/:uid/notifications/mark_seen
 
 ## Inserting
 
