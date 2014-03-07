@@ -89,7 +89,13 @@ A new material was added to the meeting
 
 ## Update (NOT IMPLEMENTED YET)
 
-    PUSH /v1/users/:uid/notifications/:id
+Single:
+
+    PUSH /v1/users/:uid/notifications/:id/mark_seen
+
+All at once:
+
+    PUSH /v1/users/:uid/notifications/mark_seen
 
 ## Inserting
 
