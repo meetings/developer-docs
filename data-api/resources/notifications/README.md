@@ -6,7 +6,8 @@
         id : s*,
         type : s*, // various, for example "rsvp"; documented in the next chapter
         date : i*,
-        seen_at : i,
+        is_seen : 1|0,
+        is_read : 1|0,
         data : {} // documented in the next chapter
     }
 
@@ -89,25 +90,37 @@ A new material was added to the meeting
 
 ## Update
 
-Single: (NOT IMPLEMENTED YET)
+### Actions
 
-~~POST /v1/users/:uid/notifications/:id/mark_seen~~
+#### Mark single as READ:
 
-All at once:
+    POST /v1/users/:uid/notifications/:id/mark_read
+    
+Returns the notification object
+
+#### Mark many at a time SEEN:
 
     POST /v1/users/:uid/notifications/mark_seen
 
 Parameters:
     
     {
-        id_list : [ * ] // collection of id's to mark as seen. optional (marks all if not set)
+        id_list : [ * ] // collection of id's to mark as seen.
     }
     
 Returns:
 
     {
-        marked_as_seen : [ * ] // collection of id's that were marked as seen
+        notifications_marked_as_seen : [ * ] // collection of notification resources
     }
+    
+### RESTish
+
+    PUT /v1/users/:uid/notifications/:id
+
+Only is\_seen and is\_read parameters are mutable
+    
+Returns the notification object
 
 ## Inserting
 
