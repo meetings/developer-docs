@@ -118,7 +118,7 @@ Returns:
 
     PUT /v1/users/:uid/notifications/:id
 
-Only is\_seen and is\_read parameters are mutable
+Only is\_seen and is\_read parameters are mutable. They are also mutable only from false to true. Setting is\_read will also set is\_read.
     
 Returns the notification object
 
