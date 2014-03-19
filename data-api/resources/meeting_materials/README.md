@@ -7,7 +7,7 @@
         "material_id": s, (old, now just id)
         "author_name": s,
         "time_ago": ,
-        "object_type": s,
+        "object_type": "page" | "media" | "chat",
         "from_file": 1|0,
         "type_class": s,
         "created_epoch": i,
