@@ -6,14 +6,14 @@
         "id" : s,
         "material_id": s, (old, now just id)
         "author_name": s,
-        "time_ago": ,
-        "object_type": "page" | "media" | "chat",
+        "time_ago": s,
+        "object_type": s,
         "from_file": 1|0,
         "type_class": s,
         "created_epoch": i,
         "edited_epoch": i,
         "comment_count": i,
-        "fetch_type": s,
+        "fetch_type": "page" | "media" | "chat",
         "material_class: "agenda" | "action_points" | "other",
         "title": s,
 
