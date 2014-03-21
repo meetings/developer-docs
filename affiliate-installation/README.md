@@ -17,7 +17,7 @@ Add the following script tag with your API key on the pages you want to use the 
 ##### Tag
 
     <script type="text/javascript" id="mtn_affliate_script" data-api-key="YOUR_API_KEY"
-        src="https://platform.meetin.gs/mtn_affiliate.js" defer="defer"></script>
+        src="https://platform.meetin.gs/mtn.js" defer="defer"></script>
 
 ##### Required attributes
 
