@@ -79,6 +79,14 @@ A new material was added to the meeting
         author : {*}
     }
 
+### meetme\_request
+
+A new meet me request has arrived. Data is found within the meeting data.
+
+    data : {
+        meeting : {*},
+        author : {*}
+    }
 
 ## List
 
