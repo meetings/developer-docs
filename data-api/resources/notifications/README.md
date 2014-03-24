@@ -22,9 +22,36 @@ User was invited to a meeting and RSVP is requested
         author : {*}
     }
 
+### meetme_rsvp
+
+User was invited to a meeting in response to users meetme request and RSVP is requested
+
+    data : {
+        meeting : {*},
+        author : {*}
+    }
+
 ### invited
 
-User was invited to a meeting without and RSVP request
+User was invited to a meeting without an RSVP request
+
+    data : {
+        meeting : {*},
+        author : {*}
+    }
+
+### meetme_invited
+
+User was invited to a meeting in response to users meetme request without an RSVP request
+
+    data : {
+        meeting : {*},
+        author : {*}
+    }
+
+### new\_meeting\_title
+
+Meeting title was changed
 
     data : {
         meeting : {*},
@@ -40,9 +67,27 @@ Meeting date was changed
         author : {*}
     }
 
+### decided\_meeting\_date
+
+Meeting date was set for a meeting that previously had no time
+
+    data : {
+        meeting : {*},
+        author : {*}
+    }
+
 ### new\_meeting\_location
 
 Meeting location was changed
+
+    data : {
+        meeting : {*},
+        author : {*}
+    }
+
+### decided\_meeting\_location
+
+Meeting location was set for a meeting that previously had no location
 
     data : {
         meeting : {*},
@@ -72,6 +117,16 @@ Several new\_participant notifications were combined into one
 ### new\_material
 
 A new material was added to the meeting
+
+    data : {
+        material : {*},
+        meeting : {*},
+        author : {*}
+    }
+
+### new\_material\_comment
+
+A new comment was added to a meeting material
 
     data : {
         material : {*},
