@@ -35,6 +35,8 @@
         "created_date_string": s,
         "created_from_matchmaker_id" : s,
         "matchmaking_requester_name" : s,
+        "matchmaking_requester_company" : s,
+        "matchmaking_requester_comment" : s,
         "matchmaking_event_name" : s,
         "timezone_string": s,
         "responded_participants_count" : i,
