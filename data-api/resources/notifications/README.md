@@ -54,6 +54,7 @@ User was invited to a meeting in response to users meetme request without an RSV
 Meeting title was changed
 
     data : {
+        old_title : s,
         meeting : {*},
         author : {*}
     }
