@@ -63,5 +63,6 @@ Material can be renamed by putting a new title.
 
     {
         upload_id : s,
+        material_name : s,
     }
 
