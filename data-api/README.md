@@ -16,6 +16,7 @@
 * [Matchmaker locks](resources/matchmaker_locks)
 * [Suggestion sources](resources/suggestion_sources)
 * [Notifications](resources/notifications)
+* [Notification settings](resources/notification_settings)
 
 ## Action endpoints
 
