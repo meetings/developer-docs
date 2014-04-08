@@ -4,10 +4,10 @@
 
     {
         header: s*
-        type : "push | email",
+        type : "push" | "email",
         id : s*,
-        title: s*
-        value: true | false
+        title: s*,
+        value: 1 | 0
     }
 
 ## List
@@ -16,13 +16,10 @@
 
 ## Update
 
-    PUT /v1/users/:uid/notification_settings
-
-Parameters:
+    PUT /v1/users/:uid/notification_settings/:id
 
     {
-        id: s,
-        value: true | false
+        value: 1 | 0
     }
 
 
