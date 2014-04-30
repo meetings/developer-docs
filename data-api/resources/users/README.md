@@ -100,3 +100,16 @@ This is currently implemented only for the requesting user.
 
     PUT /v1/users/:id/
 
+## Start free trial
+
+Works only for self
+
+    POST /v1/users/:id/start_free_trial
+
+Returns
+
+    {
+        success : 1|0,
+    }
+
+
