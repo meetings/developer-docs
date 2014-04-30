@@ -48,6 +48,10 @@
         image_size : i,
     }
 
+## Remove 
+
+    DELETE /v1/meeting_material_comments/:id/
+
 ## Update (todo)
 
     PUT /v1/meeting_material_comments/:id/
@@ -57,8 +61,4 @@
         image_size : i,
     }
 
-## Remove (todo)
 
-    PUT /v1/meeting_material_comments/:id/
-
-  
