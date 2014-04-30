@@ -50,7 +50,7 @@
 
 ## Remove 
 
-    DELETE /v1/meeting_material_comments/:id/
+    DELETE /v1/meeting_materials/:materialid/comments/:id
 
 ## Update (todo)
 
