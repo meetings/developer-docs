@@ -84,6 +84,10 @@ Or by an email and a name:
         require_rsvp : 1|0,
     }
 
+## Remove
+
+    DELETE /v1/meeting_participants/:id
+
 ## Actions
 
 ### Sending invitations to draft participants in a draft meeting
