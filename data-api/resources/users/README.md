@@ -38,6 +38,7 @@ The special id "me" points to the current authorized user.
         alternative_emails : [], (todo)
         is_pro : 1|0,
         is_trial_pro : 1|0,
+        is_free_trial_expired : 1|0,
         matchmaker_fragment : s, // deprecated over meetme_fragment
         meetme_fragment : s,
 }
