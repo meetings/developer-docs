@@ -66,3 +66,7 @@ Material can be renamed by putting a new title.
         material_name : s,
     }
 
+## Remove
+
+    DELETE /v1/meeting_materials/:id
+
