@@ -112,4 +112,16 @@ Returns
         success : 1|0,
     }
 
+## Send an email reminder
 
+Send an email that contains a link to a page where user can buy to pro membership.
+
+Works only for self
+
+    POST /v1/users/:id/send_pro_features_email
+
+Returns
+
+    {
+        success : 1|0,
+    }
