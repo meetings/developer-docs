@@ -20,6 +20,17 @@
             { weekday : 1, begin_second : 15 *60*60, end_second : 24 *60*60 },
             { weekday : 6, begin_second : 0  *60*60, end_second : 3  *60*60 + 30*60 },
         ],
+        
+        source_settings : {
+            enabled : {
+                [suggestion_source_uid] : 1
+                ....
+            },
+            disabled : {
+                [suggestion_source_uid] : 1
+                ....
+            }
+        },
     }
 
 Parameters when inserting or updating
