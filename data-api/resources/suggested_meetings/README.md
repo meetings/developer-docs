@@ -44,17 +44,17 @@ Don't use this :P It was a quick hack for the summary
 
 ## Insert
 
-Call this function to specify the list of suggestions that currently have their beginning time within the specified timespan.
+Call this function to specify the list of suggestions that currently have their beginning time within the specified timespan. If no timespan is specified, does not remove removed suggestions but still works.
 
     POST /v1/users/:id/suggested_meetings/set_for_source_batch
 
     {
         container_id : s,
         container_type : s,
-        source_id_in_container : s,
+        source_id_inside_container : s,
 
-        timespan_begin_epoch : i, // start of covered timespan
-        timespan_end_epoch : i, // end of covered timespan
+        timespan_begin_epoch : i, // start of covered timespan, optional
+        timespan_end_epoch : i, // end of covered timespan, optional
         
         suggestions : [
             {
