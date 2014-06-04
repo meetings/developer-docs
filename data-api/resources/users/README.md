@@ -41,7 +41,17 @@ The special id "me" points to the current authorized user.
         is_free_trial_expired : 1|0,
         matchmaker_fragment : s, // deprecated over meetme_fragment
         meetme_fragment : s,
-}
+        source_settings : {
+            enabled : {
+                [suggestion_source_uid] : 1,
+                ...
+            },
+            disabled : {
+                [suggestion_source_uid] : 1,
+                ...
+            }
+        },
+    }
 
 ## Fetch
 
