@@ -49,9 +49,9 @@ Call this function to specify the list of suggestions that currently have their 
     POST /v1/users/:id/suggested_meetings/set_for_source_batch
 
     {
-        container_id : s,
-        container_type : s,
-        container_name : s,
+        source_container_id : s,
+        source_container_type : s,
+        source_container_name : s,
         source_id_inside_container : s,
         source_name : s,
         source_is_primary : s,
