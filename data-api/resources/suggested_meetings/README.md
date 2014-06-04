@@ -41,7 +41,38 @@ Don't use this :P It was a quick hack for the summary
         disabled : 1,
     }
 
-## Batch import
+
+## Insert
+
+Call this function to specify the list of suggestions that currently have their beginning time within the specified timespan.
+
+    POST /v1/users/:id/suggested_meetings/set_for_source_batch
+
+    {
+        container_id : s,
+        container_type : s,
+        source_id_in_container : s,
+
+        timespan_begin_epoch : i, // start of covered timespan
+        timespan_end_epoch : i, // end of covered timespan
+        
+        suggestions : [
+            {
+                uid : s, // not necessary but preferred
+                title : s,
+                begin_epoch : i,
+                end_epoch : i,
+                description : s,
+                location : s,
+                participant_list : s, // '"Antti" <antti@meetin.gs>, "Jussi" <jussi@meetin.gs>'
+                organizer : s, // '"Antti" <antti@meetin.gs>'                
+            },
+            ...
+        ]
+    }    
+    
+
+## Legacy batch import (do not use)
 
 For making sure certain meeting suggestions exist in Meetin.gs you pass a JSON array string containing suggestion objects in the http parameter "batch":
 
