@@ -42,6 +42,7 @@ Specifies all current calendars for a single container
             {
                 name : s,
                 id_inside_container : s,
+                is_primary : i,
             },
             ...
         ]
