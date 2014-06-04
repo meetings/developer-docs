@@ -8,7 +8,7 @@
                   // id_inside_container and possibly container_id
         name => s,
         id_inside_container => s,
-        is_primary => i,
+        is_primary => i, // 1 | 0
         container_id => s,
         container_type => s, // phone | google | other
         container_name => s,
