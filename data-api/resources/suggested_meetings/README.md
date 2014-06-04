@@ -51,7 +51,10 @@ Call this function to specify the list of suggestions that currently have their 
     {
         container_id : s,
         container_type : s,
+        container_name : s,
         source_id_inside_container : s,
+        source_name : s,
+        source_is_primary : s,
 
         timespan_begin_epoch : i, // start of covered timespan, optional
         timespan_end_epoch : i, // end of covered timespan, optional
