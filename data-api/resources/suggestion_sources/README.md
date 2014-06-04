@@ -4,7 +4,8 @@
 
     {
         id => s,
-        uid => s, // will be generated using container_type, id_inside_container and possibly container_id
+        uid => s, // will be generated using container_type,
+                  // id_inside_container and possibly container_id
         name => s,
         id_inside_container => s,
         is_primary => i,
@@ -40,7 +41,7 @@ Specifies all current calendars for a single container
         sources : [
             {
                 name : s,
-                id\_inside\_container : s,
+                id_inside_container : s,
             },
             ...
         ]
