@@ -53,7 +53,7 @@ The special id "me" points to the current authorized user.
             'blue',
             ...
         ],
-        custom_background_theme : s, // theme_name
+        custom_theme : s, // theme_name
         custom_background_image_url : s,
         custom_header_image_url : s,
         * custom_background_upload_id : s, // used only for updating
