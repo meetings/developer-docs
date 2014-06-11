@@ -56,8 +56,8 @@ The special id "me" points to the current authorized user.
         custom_background_theme : s, // theme_name
         custom_background_image_upload_id : s,
         custom_background_image_url : s,
-        custom_logo_image_upload_id : s,
-        custom_logo_image_url : s,
+        custom_header_image_upload_id : s,
+        custom_header_image_url : s,
         -- timezone : s, // deprecated for time_zone
         -- matchmaker_fragment : s, // deprecated over meetme_fragment
     }
