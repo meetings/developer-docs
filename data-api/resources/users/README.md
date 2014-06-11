@@ -22,7 +22,7 @@ The special id "me" points to the current authorized user.
         meetme_description : s,
         meetme_background_theme : 'u'|'c'|[number],
         meetme_background_image_url : s, // stored only if theme is 'u'
-        * meetme_background_upload_id : s // takes effect with theme 'c'
+        * meetme_background_upload_id : s, // used only for updating, takes effect with theme 'c'
     }
 
 ### Additional values for self
@@ -54,10 +54,10 @@ The special id "me" points to the current authorized user.
             ...
         ],
         custom_background_theme : s, // theme_name
-        custom_background_image_upload_id : s,
         custom_background_image_url : s,
-        custom_header_image_upload_id : s,
         custom_header_image_url : s,
+        * custom_background_image_upload_id : s, // used only for updating
+        * custom_header_image_upload_id : s, // used only for updating
         -- timezone : s, // deprecated for time_zone
         -- matchmaker_fragment : s, // deprecated over meetme_fragment
     }
