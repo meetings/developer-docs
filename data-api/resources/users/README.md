@@ -20,7 +20,7 @@ The special id "me" points to the current authorized user.
         image_url : s*,
         * upload_id : s,
         meetme_description : s,
-        meetme_mackground_theme : 'u'|'c'|[number],
+        meetme_background_theme : 'u'|'c'|[number],
         meetme_background_image_url : s, // stored only if theme is 'u'
         * meetme_background_upload_id : s // takes effect with theme 'c'
     }
@@ -28,7 +28,6 @@ The special id "me" points to the current authorized user.
 ### Additional values for self
 
     {
-        timezone : s, // deprecated for time_zone
         time_zone : s,
         tos_accepted : 1|0, // can only be set from false to true
         login_allowed_for_partners : [
@@ -39,7 +38,6 @@ The special id "me" points to the current authorized user.
         is_pro : 1|0,
         is_trial_pro : 1|0,
         is_free_trial_expired : 1|0,
-        matchmaker_fragment : s, // deprecated over meetme_fragment
         meetme_fragment : s,
         source_settings : {
             enabled : {
@@ -51,6 +49,17 @@ The special id "me" points to the current authorized user.
                 ...
             }
         },
+        available_themes : [
+            'blue',
+            ...
+        ],
+        custom_background_theme : s, // theme_name
+        custom_background_image_upload_id : s,
+        custom_background_image_url : s,
+        custom_logo_image_upload_id : s,
+        custom_logo_image_url : s,
+        -- timezone : s, // deprecated for time_zone
+        -- matchmaker_fragment : s, // deprecated over meetme_fragment
     }
 
 ## Fetch
