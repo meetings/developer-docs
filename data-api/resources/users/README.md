@@ -58,6 +58,7 @@ The special id "me" points to the current authorized user.
         custom_header_image_url : s,
         * custom_background_upload_id : s, // used only for updating, -1 clears image
         * custom_header_upload_id : s, // used only for updating, -1 clears image
+        external_ics_url : s, // url for downloading user meetings in an ics format
         -- timezone : s, // deprecated for time_zone
         -- matchmaker_fragment : s, // deprecated over meetme_fragment
     }
