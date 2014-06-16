@@ -14,6 +14,7 @@
 * [Matchmakers](resources/matchmakers)
 * [Matchmaker options](resources/matchmaker_options)
 * [Matchmaker locks](resources/matchmaker_locks)
+* [Matchmaker quickmeets](resources/matchmaker_quickmeets)
 * [Suggestion sources](resources/suggestion_sources)
 * [Notifications](resources/notifications)
 * [Notification settings](resources/notification_settings)
