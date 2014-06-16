@@ -2,18 +2,19 @@
 
 ## Resource representation
     {
-        id : s,
+        id : s*,
         matchmaker_id : i,
-        user_id : i,
-        created_date : i,
-        updated_date : i,
-        expires_date : i,
-        sent_date : i,
-        url_key : s,
+        user_id : i*,
+        created_date : i*,
+        updated_date : i*,
+        expires_date : i*,
+        sent_date : i*,
+        url_key : s*,
         email : s,
         name : s,
         phone : s,
-        organization : s
+        organization : s,
+        title : s,
     }
 
 ## Add
