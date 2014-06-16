@@ -4,7 +4,7 @@
     {
         id : s*,
         matchmaker_id : i,
-        user_id : i*,
+        creator_id : i*,
         created_date : i*,
         updated_date : i*,
         expires_date : i*,
