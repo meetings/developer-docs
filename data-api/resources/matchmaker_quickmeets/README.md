@@ -15,6 +15,7 @@
         phone : s,
         organization : s,
         title : s,
+        fill_url : s*,
     }
 
 ## Add
