@@ -18,7 +18,8 @@
             {
                 start : i, // epoch in seconds
                 end : i // epoch in seconds
-            }
+            },
+            ...
         ],
         
         time_zone : s,
@@ -43,8 +44,8 @@
         },
         
         online_conferencing_option : s,
-        online_conferencing_data  {
-        
+        online_conferencing_data : {
+            // TODO: list possible params
         },
         
         matchmaking_event_id : s,
@@ -72,7 +73,8 @@
                 {
                     end : i, // epoch in seconds
                     start : i // epoch in seconds
-                }
+                },
+                ...
             ]
         }
     }
