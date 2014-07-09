@@ -12,8 +12,18 @@
         background_image_url : s*,
         duration : i, // minutes
         buffer : i, // minutes
+        planning_buffer : i, // seconds
+        youtube_url : s,
+        available_timespans : [
+            {
+                start : i, // epoch in seconds
+                end : i // epoch in seconds
+            }
+        ],
+        
         time_zone : s,
-        time_zone_name : s*,
+        time_zone_offset : i, // seconds
+        time_zone_string : s,
 
         slots : [
             { weekday : 0, begin_second : 8  *60*60, end_second : 16 *60*60 },
@@ -31,6 +41,40 @@
                 ....
             }
         },
+        
+        online_conferencing_option : s,
+        online_conferencing_data  {
+        
+        },
+        
+        matchmaking_event_id : s,
+        event_data : {
+            id : i,
+            name : s,
+            reserve_limit : i,
+            force_buffer : i, // seconds
+            force_time_zone : s,
+            organizer_ur : http://slush.fi/,
+            force_location : s,
+            default_agenda: s,
+            force_duration : i, // seconds
+            force_online_conferencing_option : s,
+            force_online_conferencing_data : {},
+            force_vanity_url_path : s,
+            organizer_name : s,
+            force_background_image_url : s,
+            locations_description : s,
+            default_description : s,
+            organizer_return_url : s,
+            default_background_image_url : s,
+            show_youtube_url : i,
+            force_available_timespans : [
+                {
+                    end : i, // epoch in seconds
+                    start : i // epoch in seconds
+                }
+            ]
+        }
     }
 
 Parameters when inserting or updating
