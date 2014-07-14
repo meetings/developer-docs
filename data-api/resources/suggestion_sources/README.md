@@ -9,6 +9,7 @@
         name => s,
         id_inside_container => s,
         is_primary => i, // 1 | 0
+        last_update_epoch => i,
         container_id => s,
         container_type => s, // phone | google | other
         container_name => s,
