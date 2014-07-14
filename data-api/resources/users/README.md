@@ -36,6 +36,7 @@ The special id "me" points to the current authorized user.
         facebook_user_id : s*,
         alternative_emails : [], (todo)
         is_pro : 1|0,
+        is_trial_pro : 1|0,
         is_free_trial_expired : 1|0,
         subscription_type : ''|'trial'|'user'|'company'|'sponsored',
         subscription_trial_expires_epoch : i, // present only for type 'trial'
