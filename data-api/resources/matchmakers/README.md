@@ -5,6 +5,7 @@
     {
         id : s*,
         user_id : s*,
+        require_verified_user : 0|1,
         vanity_url_path : s,
         description : s,
         location : s,
