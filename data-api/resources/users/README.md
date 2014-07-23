@@ -43,6 +43,7 @@ The special id "me" points to the current authorized user.
         subscription_user_admin_url : s, // present only for type 'user'
         subscription_company_name : s, // present only for type 'company'
         subscription_company_admin_url : s, // present only for type 'company' admins
+        subscription_company_admin_name : s, // present only for tupe 'company' nonadmins
         meetme_fragment : s,
         source_settings : {
             enabled : {
