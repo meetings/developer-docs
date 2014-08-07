@@ -40,7 +40,8 @@ The special id "me" points to the current authorized user.
         is_free_trial_expired : 1|0,
         subscription_type : ''|'trial'|'user'|'company'|'sponsored',
         subscription_trial_expires_epoch : i, // present only for type 'trial'
-        subscription_user_admin_url : s, // present only for type 'user'
+        subscription_user_admin_url : s, // present only for type 'user' and if from paypal
+        subscription_user_expires_epoch : s, // present only for type 'user' and if sub cancelled
         subscription_company_name : s, // present only for type 'company'
         subscription_company_admin_url : s, // present only for type 'company' admins
         subscription_company_admin_name : s, // present only for tupe 'company' nonadmins
