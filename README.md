@@ -10,8 +10,19 @@ This is a HTTPS REST API which responds with JSON structures. You can authentica
 
 https://github.com/Meetings/developer-docs/tree/master/data-api
 
+## [Meetin.gs Affiliate Installation](https://github.com/Meetings/developer-docs/tree/master/affiliate-installation)
 
-## [Meetin.gs Notification API](https://github.com/Meetings/developer-docs/tree/master/notification-api)
+How to use the Meetin.gs Platform API to add Schedule -buttons to any web page.
+
+https://github.com/Meetings/developer-docs/tree/master/affiliate-installation
+
+## [Meetin.gs URL Scheme Parameters](https://github.com/Meetings/developer-docs/tree/master/url-scheme-parameters)
+
+This is a documentation of the parameters our mobile applications url schemes and mobile web frontends accept in order to instruct them to start in a specific state.
+
+https://github.com/Meetings/developer-docs/tree/master/url-scheme-parameters
+
+## [Meetin.gs Notification API](https://github.com/Meetings/developer-docs/tree/master/notification-api) (NOT READY)
 
 This API allows you to be notified when something matching certain criteria happens inside Meetin.gs. This API can be used to provide real time updates to clients or automate meeting manipulation in response to user actions as a partner.
 
@@ -19,7 +30,7 @@ This API uses a JSON structure based subscription system over HTTPS and notifica
 
 https://github.com/Meetings/developer-docs/tree/master/notification-api
 
-## [Meetin.gs Application connector development guidelines](https://github.com/Meetings/developer-docs/tree/master/application-guides)
+## [Meetin.gs Application connector development guidelines](https://github.com/Meetings/developer-docs/tree/master/application-guides) (NOT READY)
 
 This section describes what you need to take into account when developing an application connector.
 
