@@ -25,6 +25,10 @@ If you go along with the state string route, you can send the state string to ou
 
 From the create completed URL the user is taken to view your newly selected material inside meetings. Your software should thus receive a request to the Show endpoint with the "instance\_id" and "instance\_state" parameters along with some other data.
 
+NOTE: The instance state parameter encoding with SHA256 has the problem of not being able to alter the secret without invalidatign all connections. This does not work well and an another method should be outlined.
+
+TODO: a "create\_cancelled\_url" should needed here.
+
 ### Show endpoint
 
 When a user opens a material created to have the type of your application, your Show endpoint receives a GET request with the parameters "instance\_id" and "instance\_state" with some other data. Your endpoint should check that a valid connereturn an HTML representation of the object corresponding to the given ID. All the meeting participants can now see it in an iframe inside their Meetin.gs user interface.
