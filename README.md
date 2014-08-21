@@ -41,6 +41,6 @@ https://github.com/Meetings/developer-docs/tree/master/application-guides
 This is mainly for markdown compilation testing purposes. Normally you would browse these through Github.
 
     npm install -g markdown
-    ./Build.sh
+    ./Build.pl
     open build/index.html
 
