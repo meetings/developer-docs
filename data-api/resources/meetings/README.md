@@ -40,7 +40,7 @@
         "matchmaking_event_name" : s,
         "timezone_string": s,
         "responded_participants_count" : i,
-
+        
         "participants" : [ ${participants-resource}, ... ],
         "proposals" : [ ${time_proposals-resource}, ... ], 
     }
@@ -49,7 +49,11 @@
 
     {
         materials : [ ${materials-resource}, ... ],
-        invite_greetings : {
+        confirmed_title : s, // presence indicates that title should not be editable during invite sending anymore and this value should be shown in the confirm dialog
+        suggested_title : s, // in absence of confirmed_title, this should be the filled in value for the title in the send confirm dialog
+        confirmed_agenda_html : s, // presence indicates that agenda should not be editable during invite sending anymore and this html content should be shown in the confirm dialog
+        suggested_agenda_text : s, // in absence of confirmed_agenda_html, this should be the filled in value fot the agenda in the send confirm dialog
+        invite_greetings : { // this is for legacy apps and should not be used in new ones, use ones above when sending the invite
             subject : s,
             content : s,
             subject_rsvp : s,
