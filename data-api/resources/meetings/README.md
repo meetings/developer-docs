@@ -112,11 +112,27 @@ If you do this, no further parameters are used and the meeting is created from t
 
     DELETE /v1/meetings/:id
 
-## Action: decline proposed meeting and send reason to users
+## Actions
+
+### Decline proposed meeting and send reason to users
 
     POST /v1/meetings/:id/matchmaking_decline
 
 Additional parameter for telling a reason:
 
     decline_message
+
+### Confriming a draft meeting
+
+Confirming a draft meeting is done by sending invites to draft participants
+
+    POST /v1/meetings/:id/send_draft_participant_invites
+
+    {
+        agenda : s, // can be used to set but not clear agenda
+        title : s, // can be used to set but not clear title
+        greeting_subject : s, // deprecated
+        greeting_message : s, // deprecated
+        require_rsvp : 1|0,
+    }
 
