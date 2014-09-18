@@ -90,15 +90,7 @@ Or by an email and a name:
 
 ## Actions
 
-### Sending invitations to draft participants in a draft meeting, while setting the confirmed title and agenda
+### Sending draft participant invitations
 
-    POST /v1/meetings/:id/send_draft_participant_invites/
-
-    {
-        agenda : s, // can be used to set but not clear agenda
-        title : s, // can be used to set but not clear title
-        greeting_subject : s, // deprecated
-        greeting_message : s, // deprecated
-        require_rsvp : 1|0,
-    }
+Draft participants can be turned into real participants using an action to send their invites simultaneously. This is documented in the [meetings resource documentation](../meetings/README.md).
 
