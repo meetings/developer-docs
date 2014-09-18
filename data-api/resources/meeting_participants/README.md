@@ -79,8 +79,8 @@ Or by an email and a name:
 ### Additional parameters for adding participants to a non-draft meeting
 
     {
-        greeting_subject : s,
-        greeting_message : s,
+        greeting_subject : s, // deprecated
+        greeting_message : s, // deprecated
         require_rsvp : 1|0,
     }
 
@@ -90,13 +90,15 @@ Or by an email and a name:
 
 ## Actions
 
-### Sending invitations to draft participants in a draft meeting
+### Sending invitations to draft participants in a draft meeting, while setting the confirmed title and agenda
 
     POST /v1/meetings/:id/send_draft_participant_invites/
 
     {
-        greeting_message : s,
-        greeting_message : s,
+        agenda : s, // can be used to set but not clear agenda
+        title : s, // can be used to set but not clear title
+        greeting_subject : s, // deprecated
+        greeting_message : s, // deprecated
         require_rsvp : 1|0,
     }
 
