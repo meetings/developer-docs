@@ -5,13 +5,21 @@
     {
         id : s*,
         user_id : s*,
-        require_verified_user : 0|1,
         vanity_url_path : s,
         description : s,
         location : s,
         background_theme : s,
         background_image_url : s*,
         duration : i, // minutes
+        planning_buffer : i, // seconds
+        preset_agenda : s,
+        ask_reason : 0|1,
+        suggest_reason : s,
+        meeting_type : s,
+        meetme_hidden : 0|1,
+        direct_link_enabled : 0|1,
+        confirm_automatically : 0|1,
+        require_verified_user : 0|1,
         buffer : i, // minutes
         planning_buffer : i, // seconds
         youtube_url : s,
@@ -26,7 +34,7 @@
         time_zone : s,
         time_zone_offset : i, // seconds
         time_zone_string : s,
-
+        
         slots : [
             { weekday : 0, begin_second : 8  *60*60, end_second : 16 *60*60 },
             { weekday : 1, begin_second : 15 *60*60, end_second : 24 *60*60 },
@@ -48,6 +56,9 @@
         online_conferencing_data : {
             // TODO: list possible params
         },
+        
+        preset_title : s,
+        preset_materials : [ ... ],
         
         matchmaking_event_id : s,
         event_data : {
