@@ -98,8 +98,16 @@ However this functionality will go away at some point and will be replaced with 
 ## Insert
 
     POST /v1/meetings/
+    
+The insert request can contain the following additional parameters:
 
-In addition to normal function, you can pass in the id for a meeting_suggestion object to activate:
+    initial_agenda : s, // html of the initial agenda
+    participants : [
+        { ... }, // object containing the same parameters as normal participant adding
+        ...
+    ]
+
+Instead of the normal function, you can pass in the id for a meeting_suggestion object to activate:
 
     from_suggestion_id
     
