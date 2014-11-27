@@ -16,7 +16,7 @@
         tracking_id : s,
     }
 
-## Request log in PIN code
+## Request log in PIN code via email
 
     POST /v1/login
 
@@ -32,7 +32,21 @@
         tracking_id : s,
     }
 
+## Request log in PIN code via SMS
 
+    POST /v1/login
+
+### POST params
+
+    {
+        phone : s,
+        include_pin : 1,
+
+        ip : s,
+        allow_register : 1|0,
+        tracking_id : s,
+    }
+    
 ## Verify PIN code
 
     POST /v1/login
