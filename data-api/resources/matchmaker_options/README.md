@@ -3,6 +3,7 @@
 ## Resource representation
     {
         id : s,
+        matchmaker_id : i,
         start_epoch : i,
         end_epoch : i,
         start : s,
