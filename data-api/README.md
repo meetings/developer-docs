@@ -3,6 +3,7 @@
 ## REST Resources
 
 * [Users](resources/users)
+* [User meeting contacts](resources/user_meeting_contacts)
 * [Meetings](resources/meetings)
 * [Meeting participants](resources/meeting_participants)
 * [Meeting time proposals](resources/meeting_time_proposals)
