@@ -1,3 +1,4 @@
+
 # Matchmaker quickmeet resources
 
 ## Resource representation
@@ -29,5 +30,3 @@
 ## Send or resend
 
     POST /v1/matchmakers/:id/quickmeets/:id/send
-
-

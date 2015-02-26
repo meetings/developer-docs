@@ -1,6 +1,7 @@
+
 # User meeting contact resources
 
-## Resource representation
+## Resource representation FIXME
 
     {
         name : s,
@@ -8,8 +9,6 @@
         phone : s,
     }
 
-## List
+## List FIXME not implemented
 
     GET /v1/users/:id/meeting_contacts
-
-

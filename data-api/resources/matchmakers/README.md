@@ -1,3 +1,4 @@
+
 # Matchmaker resources
 
 ## Resource representation
@@ -30,17 +31,17 @@
             },
             ...
         ],
-        
+
         time_zone : s,
         time_zone_offset : i, // seconds
         time_zone_string : s,
-        
+
         slots : [
             { weekday : 0, begin_second : 8  *60*60, end_second : 16 *60*60 },
             { weekday : 1, begin_second : 15 *60*60, end_second : 24 *60*60 },
             { weekday : 6, begin_second : 0  *60*60, end_second : 3  *60*60 + 30*60 },
         ],
-        
+
         source_settings : {
             enabled : {
                 [suggestion_source_uid] : 1
@@ -51,15 +52,15 @@
                 ....
             }
         },
-        
+
         online_conferencing_option : s,
         online_conferencing_data : {
             // TODO: list possible params
         },
-        
+
         preset_title : s,
         preset_materials : [ ... ],
-        
+
         matchmaking_event_id : s,
         event_data : {
             id : i,
@@ -91,7 +92,7 @@
         }
     }
 
-Parameters when inserting or updating
+Parameters when inserting or updating:
 
     {
         background_upload_id : s,
@@ -105,7 +106,7 @@ Parameters when inserting or updating
 
 ### By meet me fragments
 
-    GET /v1/matchmakers/
+    GET /v1/matchmakers
 
     {
         user_fragment : s,
@@ -120,7 +121,7 @@ Parameters when inserting or updating
 
 ### By meet me fragment
 
-    GET /v1/matchmakers/
+    GET /v1/matchmakers
 
     {
         user_fragment : s,
@@ -133,4 +134,3 @@ Parameters when inserting or updating
 ## Insert
 
     POST /v1/users/:id/matchmakers
- 

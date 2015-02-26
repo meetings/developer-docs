@@ -1,3 +1,4 @@
+
 # Highlighted meeting resources
 
 ## Resource representation
@@ -22,8 +23,8 @@
 
 ## List
 
-    GET /v1/users/:id/highlighted_meetings/
+    GET /v1/users/:id/highlighted_meetings
 
-    GET /v1/users/:id/highlights/ (old)
+Deprecated:
 
-  
+    GET /v1/users/:id/highlights

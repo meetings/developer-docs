@@ -1,3 +1,4 @@
+
 # Matchmaker option resources
 
 ## Resource representation
@@ -21,7 +22,7 @@
 
 ## Preview
 
-    GET /v1/users/:id/preview_matchmaker_options
+    POST /v1/users/:id/preview_matchmaker_options
 
     {
         slots : [ ... ], // format documented in the matchmaker resource

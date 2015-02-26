@@ -1,3 +1,4 @@
+
 # Suggested meeting resources
 
 ## Resource representation
@@ -21,25 +22,30 @@
 
 ## List
 
-    GET /v1/users/:id/suggested_meetings/
+    GET /v1/users/:id/suggested_meetings
 
-    GET /v1/users/:id/meeting_suggestions/ (deprecated)
+Deprecated:
+
+    GET /v1/users/:id/meeting_suggestions
 
 
 ### Special hack
 
-Don't use this :P It was a quick hack for the summary
+**Don't use this!** It ws a quick hack for the summary.
 
-    GET /v1/users/:id/meetings_and_suggestions/
+    GET /v1/users/:id/meetings_and_suggestions
 
 ## Hide
 
     PUT /v1/suggested_meetings/:id
-    PUT /v1/meeting_suggestions/:id (deprecated)
 
     {
         disabled : 1,
     }
+
+Deprecated:
+
+    PUT /v1/meeting_suggestions/:id
 
 
 ## Insert
@@ -58,7 +64,7 @@ Call this function to specify the list of suggestions that currently have their 
 
         timespan_begin_epoch : i, // start of covered timespan, optional
         timespan_end_epoch : i, // end of covered timespan, optional
-        
+
         suggestions : [
             {
                 uid : s, // not necessary but preferred
@@ -68,14 +74,14 @@ Call this function to specify the list of suggestions that currently have their 
                 description : s,
                 location : s,
                 participant_list : s, // '"Antti" <antti@meetin.gs>, "Jussi" <jussi@meetin.gs>'
-                organizer : s, // '"Antti" <antti@meetin.gs>'                
+                organizer : s, // '"Antti" <antti@meetin.gs>'
             },
             ...
         ]
-    }    
-    
+    }
 
-## Legacy batch import (do not use)
+
+## Legacy batch import (DO NOT USE)
 
 For making sure certain meeting suggestions exist in Meetin.gs you pass a JSON array string containing suggestion objects in the http parameter "batch":
 
@@ -98,4 +104,3 @@ The possible parameters for a suggestion are:
         participant_list : s, // '"Antti" <antti@meetin.gs>, "Jussi" <jussi@meetin.gs>'
         organizer : s, // '"Antti" <antti@meetin.gs>'
     }
-

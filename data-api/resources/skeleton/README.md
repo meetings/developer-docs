@@ -1,3 +1,4 @@
+
 # Skeletons
 
 ## Resource representation
@@ -16,15 +17,15 @@
 
 ### By user
 
-    GET /v1/users/:id/skeletons/
+    GET /v1/users/:id/skeletons
 
 ### By meeting
 
-    GET /v1/meetings/:id/skeletons/
+    GET /v1/meetings/:id/skeletons
 
 ### By search criteria
 
-    GET /v1/skeletons/
+    GET /v1/skeletons
 
     skeleton_param : s
 
@@ -34,5 +35,4 @@
 
 ## Insert
 
-    POST /v1/skeletons/
-  
+    POST /v1/skeletons

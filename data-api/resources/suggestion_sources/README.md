@@ -1,3 +1,4 @@
+
 # Meeting suggestion sources
 
 ## Resource representation
@@ -31,10 +32,10 @@ Returns an array of suggestion sources for a given user.
 
 ## Insert
 
-Specifies all current calendars for a single container
+Specifies all current calendars for a single container.
 
     POST /v1/users/:id/suggestion_sources/set_container_batch
-    
+
     {
         container_name: s,
         container_type: s,

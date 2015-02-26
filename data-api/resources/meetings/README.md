@@ -1,4 +1,5 @@
-# Meeting resources 
+
+# Meeting resources
 
 ## Resource representation
 
@@ -40,16 +41,16 @@
         "matchmaking_event_name" : s,
         "timezone_string": s,
         "responded_participants_count" : i,
-        
+
         "participants" : [ ${participants-resource}, ... ],
-        "proposals" : [ ${time_proposals-resource}, ... ], 
+        "proposals" : [ ${time_proposals-resource}, ... ],
     }
 
 ### Additional immutable values in single fetch resource responses
 
     {
         materials : [ ${materials-resource}, ... ],
-        suggested_agenda : s, 
+        suggested_agenda : s,
         invite_greetings : { // this is for legacy apps and should not be used in new ones, use ones above when sending the invite
             subject : s,
             content : s,
@@ -64,7 +65,7 @@
 
 ## List
 
-    GET /v1/users/:id/meetings/
+    GET /v1/users/:id/meetings
 
     {
         user_id : resolve_param_user_id( req ),
@@ -76,14 +77,14 @@
         include_draft : req.query.include_draft || 0 // 1|0
     }
 
-    GET /v1/users/:id/unscheduled_meetings/ (should me merged to the previous with a param)
+    GET /v1/users/:id/unscheduled_meetings (should me merged to the previous with a param)
 
 
 ### Special hack
 
-Don't use this :P It ws a quick hack for the summary
+**Don't use this!** It ws a quick hack for the summary.
 
-    GET /v1/users/:id/meetings_and_suggestions/
+    GET /v1/users/:id/meetings_and_suggestions
 
 ## Update
 
@@ -97,8 +98,8 @@ However this functionality will go away at some point and will be replaced with 
 
 ## Insert
 
-    POST /v1/meetings/
-    
+    POST /v1/meetings
+
 The insert request can contain the following additional parameters:
 
     initial_agenda : s, // html of the initial agenda
@@ -110,7 +111,7 @@ The insert request can contain the following additional parameters:
 Instead of the normal function, you can pass in the id for a meeting_suggestion object to activate:
 
     from_suggestion_id
-    
+
 If you do this, no further parameters are used and the meeting is created from the data found in this suggestion.
 
 ## Remove
@@ -140,4 +141,3 @@ Confirming a draft meeting is done by sending invites to draft participants
         greeting_message : s, // deprecated
         require_rsvp : 1|0,
     }
-

@@ -1,3 +1,4 @@
+
 # Meeting material comment resources
 
 ## Resource representation
@@ -33,32 +34,30 @@
 
 ## List
 
-    GET /v1/meeting_materials/:id/comments/
-    
+    GET /v1/meeting_materials/:id/comments
+
     {
         image_size : i, // what is the height and width of the profile images returned for commenters
     }
 
 ## Insert
 
-    POST /v1/meeting_materials/:id/comments/
+    POST /v1/meeting_materials/:id/comments
 
     {
         content : s,
         image_size : i,
     }
 
-## Remove 
+## Remove
 
     DELETE /v1/meeting_materials/:materialid/comments/:id
 
 ## Update (todo)
 
-    PUT /v1/meeting_material_comments/:id/
+    PUT /v1/meeting_material_comments/:id
 
     {
         content : s,
         image_size : i,
     }
-
-

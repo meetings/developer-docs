@@ -1,3 +1,4 @@
+
 # Meeting material resources
 
 ## Resource representation
@@ -31,7 +32,7 @@
 
 ## List
 
-    GET /v1/meetings/:id/materials/
+    GET /v1/meetings/:id/materials
 
 ## Update
 
@@ -59,7 +60,7 @@ Material can be renamed by putting a new title.
 
 ### Adding an image material from uploads
 
-    POST /v1/meetings/:id/materials/
+    POST /v1/meetings/:id/materials
 
     {
         upload_id : s,
@@ -69,4 +70,3 @@ Material can be renamed by putting a new title.
 ## Remove
 
     DELETE /v1/meeting_materials/:id
-

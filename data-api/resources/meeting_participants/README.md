@@ -1,3 +1,4 @@
+
 # Meeting participant resources
 
 ## Resource representation
@@ -34,24 +35,28 @@
 
     GET /v1/meeting_participants/:id
 
-### Legacy version which operates with meeting\_id & user\_id
+### Legacy version
 
-    GET /v1/meetings/:id/participants/:pid   
+Operates with `meeting_id` and `user_id`.
+
+    GET /v1/meetings/:id/participants/:pid
 
 ## List
 
-    GET /v1/meetings/:id/participants/
+    GET /v1/meetings/:id/participants
 
 ## Update
 
     PUT /v1/meeting_participants/:id
-    
+
     {
         "rsvp" : "yes" | "no",
         "proposal_answers" : ???
     }
 
-### Legacy version which operates with meeting\_id & user\_id
+### Legacy version
+
+Operates with `meeting_id` and `user\_id`.
 
     PUT /v1/meetings/:id/participants/:pid
 
@@ -59,7 +64,7 @@
 
 This will result in either a draft participant or a real participant being created depending on the status of the meeting. To sent invitations out for already created draft participants, use the draft invitation sending action.
 
-    POST /v1/meetings/:id/participants/
+    POST /v1/meetings/:id/participants
 
 ### Parameters for adding participants to any type of meeting
 
@@ -93,4 +98,3 @@ Or by an email and a name:
 ### Sending draft participant invitations
 
 Draft participants can be turned into real participants using an action to send their invites simultaneously. This is documented in the [meetings resource documentation](../meetings).
-

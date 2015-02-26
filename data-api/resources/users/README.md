@@ -1,3 +1,4 @@
+
 # User resources
 
 The special id "me" points to the current authorized user.
@@ -76,7 +77,7 @@ The special id "me" points to the current authorized user.
 
 This is currently implemented only for the requesting user.
 
-    GET /v1/users/:id/
+    GET /v1/users/:id
 
     {
         image_size : i || 50,
@@ -84,7 +85,7 @@ This is currently implemented only for the requesting user.
 
 ### By meet me fragment
 
-    GET /v1/users/
+    GET /v1/users
 
     {
         user_fragment : s,
@@ -93,7 +94,7 @@ This is currently implemented only for the requesting user.
 
 ### By email
 
-    GET /v1/users/
+    GET /v1/users
 
     {
         email : s,
@@ -106,7 +107,7 @@ This is currently implemented only for the requesting user.
 
 Currently implemented only as part of the matchmaker reservation flow.
 
-    POST /v1/users/
+    POST /v1/users
 
     Additional required params when creating:
 
@@ -125,7 +126,7 @@ Currently implemented only as part of the matchmaker reservation flow.
 
 This is currently implemented only for the requesting user.
 
-    PUT /v1/users/:id/
+    PUT /v1/users/:id
 
 ## Start free trial
 

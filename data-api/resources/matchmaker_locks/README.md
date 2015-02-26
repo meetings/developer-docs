@@ -1,6 +1,8 @@
+
 # Matchmaker lock resources
 
 ## Resource representation
+
     {
         id : s,
         matchmaker_id : s,
@@ -35,7 +37,7 @@
         end_epoch : i,
     }
 
-    OR
+...or...
 
     POST /v1/matchmaker_locks
 
@@ -77,4 +79,3 @@ Emails the confirmer and the matchmaking owner about next actions
 After confirmation the lock contains a lot of data that can be used to prepare for the upcoming meeting
 
     GET /v1/matchmaker_locks/:id
-
