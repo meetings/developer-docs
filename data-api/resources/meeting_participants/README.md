@@ -98,3 +98,9 @@ Or by an email and a name:
 ### Sending draft participant invitations
 
 Draft participants can be turned into real participants using an action to send their invites simultaneously. This is documented in the [meetings resource documentation](../meetings).
+
+### Resending invitations
+
+    POST /v1/meeting_participants/:id/resend_invitation
+    
+The effect of this action depends on wether the participant is a part of a running scheduling or not.
