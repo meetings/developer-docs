@@ -21,6 +21,7 @@
         "is_creator": 0|1,
         "proposal_answers": {},
         "rsvp_required": 0|1,
+        "scheduling_disabled": 0|1,
         "name": s,
         "is_manager": 0|1,
         "phone": s,
@@ -81,12 +82,20 @@ Or by an email and a name:
         name : s?, // if name is provided, it overrides the phrase in the email
     }
 
+### Additional parameters for adding participants to a draft meeting
+
+    {
+        require_rsvp : 0|1,
+        scheduling_disabled : 0|1,
+    }
+
 ### Additional parameters for adding participants to a non-draft meeting
 
     {
         greeting_subject : s, // deprecated
         greeting_message : s, // deprecated
         require_rsvp : 1|0,
+        scheduling_disabled : 0|1,
     }
 
 ## Remove
@@ -104,3 +113,8 @@ Draft participants can be turned into real participants using an action to send 
     POST /v1/meeting_participants/:id/resend_invitation
     
 The effect of this action depends on wether the participant is a part of a running scheduling or not.
+
+### Controlling scheduling participation
+
+    POST /v1/meeting_participants/:id/disable_scheduling
+    POST /v1/meeting_participants/:id/enable_scheduling
