@@ -22,6 +22,8 @@ Direct meeting and material opening parameters, with meet me response helper:
 
     redirect_to_meeting - integer : ID of the meeting which should be opened if present
     redirect_to_material - string : ID of the material which should be opened if present (depends on redirect_to_meeting)
+    redirect_to_scheduling - string : ID of the scheduling which should be opened if present (depends on redirect_to_meeting)
+    redirect_to_scheduling_log - string : ID of the scheduling which should be opened if present (depends on redirect_to_meeting)
     matchmaking_response - "accept"|"decline" : should open meeting and perform meet me request response according to value (depends on redirect_to_meeting)
 
 Meet me page opening parameters:
